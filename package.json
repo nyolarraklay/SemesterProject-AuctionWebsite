@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "auction website",
   "type": "module",
-  "main": "src/index.js",
+  "main": "src/index.mjs",
   "scripts": {
     "test": "node src/js/index.js",
     "format": "prettier -w src/**/*.js",
