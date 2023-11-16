@@ -1,0 +1,26 @@
+{
+  "name": "semesterproject-auctionwebsite",
+  "version": "0.0.1",
+  "description": "auction website",
+  "type":"module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyolarraklay/SemesterProject-AuctionWebsite.git"
+  },
+  "keywords": [
+    "css",
+    "e-commerce",
+    "auction",
+    "website"
+  ],
+  "author": "Ernesto F. Osorio Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyolarraklay/SemesterProject-AuctionWebsite/issues"
+  },
+  "homepage": "https://github.com/nyolarraklay/SemesterProject-AuctionWebsite#readme"
+}
