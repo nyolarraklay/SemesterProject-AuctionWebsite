@@ -1,8 +1,8 @@
 {
   "name": "semesterproject-auctionwebsite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "auction website",
-  "type":"module",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
