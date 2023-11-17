@@ -1,4 +1,5 @@
 import * as constant from "../constant/index.mjs";
+import { headers } from "./headers.mjs";
 
 const method = "post";
 
@@ -16,12 +17,14 @@ export async function registerToAPI() {
   };
 
   const response = await fetch(logInURL, {
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: headers("application/json"),
     method,
     body: JSON.stringify(profile),
   });
 
-  const result = await response.json();
+  if (response.ok) {
+    return await response.json();
+  }
+
+  throw new Error(response.statusText);
 }
