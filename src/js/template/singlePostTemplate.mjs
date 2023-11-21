@@ -42,7 +42,7 @@ export function singlePostTemplate(postData) {
       postCreated,
       postUpdated,
       postEnded,
-      img
+      img,
     );
     timeLinePosts.append(cardBody);
     return timeLinePosts;

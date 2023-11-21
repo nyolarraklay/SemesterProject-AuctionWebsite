@@ -1,11 +1,7 @@
-@import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
-body {
-  font-family: "Roboto", sans-serif;
-}
+@import "userStyles";
 
-$font-sizes: (
-  7: 0.8rem,
-  8: 0.5rem,
-);
+@import "_variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-$primary: rgb(12, 194, 240);
+@import "_reboot";
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot";

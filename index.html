@@ -6,8 +6,19 @@
     <title>Frienstegram | Log-In</title>
     <link rel="stylesheet" href="./dist/css/styles.css" />
     <script
-      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-      defer
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
     ></script>
     <script src="./src/js/index.mjs" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,135 +27,132 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
   </head>
-  <body class="bg-light">
-    <div
-      class="container d-flex justify-content-evenly flex-column flex-lg-row mt-5 pt-5"
-    >
-      <div class="text-center text-lg-start mt-lg-5 pt-lg-5">
-        <h1 class="fw-bold text-primary">Friendstegram</h1>
-        <p class="lead mx-auto mx-lg-0 text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, in!
-        </p>
-      </div>
-      <div class="text-start bg-white shadow rounded p-3 input-group-lg">
-        <form id="loginForm">
-          <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            required
-          />
-          <label for="password" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-            minlength="8"
-            required
-          />
-          <button type="submit" class="btn btn-primary w-100 my-3">
-            Log In
-          </button>
-
-          <hr />
-          <div class="my-4 text-center">
-            <button
-              type="button"
-              class="btn btn-info btn-lg"
-              data-bs-toggle="modal"
-              data-bs-target="#createModal"
-            >
-              Create New Account
-            </button>
-          </div>
-        </form>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="createModal"
-          tabindex="-1"
-          aria-labelledby="createModalLabel"
-          aria-hidden="true"
+  <body>
+    <div class="d-flex flex-column justify-content-between h-100">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title fs-5" id="createModalLabel">Sign Up</h2>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form id="signUpForm">
-                  <div class="form-group mb-3">
-                    <label for="">Username</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      required
-                      pattern="^[\w]+$"
-                      title="user name must only contain lower case and upper case letters, numbers, and underscore(_). Example: Mr_Name12332"
-                    />
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      required
-                      pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                      title="Only @(stud.)noroff.no domains are allowed to sign up."
-                    />
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="">Password</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      name="password"
-                      required
-                      minlength="8"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary">Sign Up</button>
-                </form>
-              </div>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Auction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Log-In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+
+      
+        </div>
+      </nav>
+
+      <div class="wrapper">
+        <div>
+          <h3 class="text-center mt-4">Customer Log-in</h3>
+          <div class="text-start bg-white shadow rounded p-3 input-group-lg">
+            <form id="loginForm p-3 mt-3">
+              <label for="email" class="form-label"
+                >Email / Phone-Number / Username</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                minlength="8"
+                required
+              />
+              <button type="submit" class="btn btn-primary w-100 my-3">
+                Log In
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-primary py-4 flex-shrink-0 d-none d-sm-block">
+        <div class="container py-4">
+          <div class="row gy-4 gx-5">
+            <div class="col-lg-4 col-md-6">
+              <h5 class="h3">A & Z AUCTION</h5>
+              <p class="small text-muted mb-0">
+                &copy; Copyrights. All rights reserved.
+              </p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <h7>Site Map</h7>
+              <p class="mx-2 fs-8 mb-0">Home</p>
+              <p class="mx-2 fs-8 mb-0">Auction</p>
+              <p class="mx-2 fs-8 mb-0">LogIn</p>
+              <p class="mx-2 fs-8 mb-0">Register</p>
+              <p class="mx-2 fs-8 mb-0">Contact Us</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+              <h6>Social Media</h6>
+              <p class="mx-2 fs-8 mb-0">Facebook</p>
+              <p class="mx-2 fs-8 mb-0">Instagram</p>
+              <p class="mx-2 fs-8 mb-0">Twitter</p>
+              <p class="mx-2 fs-8 mb-0">TikTok</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <h5 class="mb-3">Newsletter</h5>
+              <p class="small text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt.
+              </p>
+              <form action="#">
+                <div class="input-group mb-3">
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Recipient's username"
+                    aria-label="Recipient's username"
+                    aria-describedby="button-addon2"
+                  />
+                  <button
+                    class="btn btn-secondary"
+                    id="button-addon2"
+                    type="button"
+                  >
+                    <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
-
-    <footer class="bg-white p-4 text-muted fixed-bottom w-100">
-      <div class="container d-flex">
-        <div class="d-flex flex-column">
-          <h6>Site Map</h6>
-          <p class="mx-2 fs-8 mb-0">English</p>
-          <p class="mx-2 fs-8 mb-0">Chinese</p>
-          <p class="mx-2 fs-8 mb-0">Korean</p>
-          <p class="mx-2 fs-8 mb-0">Tagalog</p>
-          <p class="mx-2 fs-8 mb-0">Norwegian</p>
-        </div>
-        <div class="d-flex flex-column">
-          <h6>Social Media</h6>
-          <p class="mx-2 fs-8 mb-0">Log In</p>
-          <p class="mx-2 fs-8 mb-0">Message</p>
-          <p class="mx-2 fs-8 mb-0">Sign Up</p>
-          <p class="mx-2 fs-8 mb-0">Watch</p>
-        </div>
-        <div class="mt-2 mx-2">
-          <p class="fs-8">&copy; 2023</p>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

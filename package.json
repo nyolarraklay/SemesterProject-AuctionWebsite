@@ -5,12 +5,12 @@
   "type": "module",
   "main": "src/index.mjs",
   "scripts": {
-    "test": "node src/js/index.js",
-    "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js",
+    "test": "node src/js/index.mjs",
+    "format": "prettier -w src/**/*.mjs",
+    "lint": "eslint src/**/*.mjs",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "build": "sass src/scss:dist/css",
-    "watch": "sass src/scss:dist/css --watch",
+    "watch": "sass --watch src/scss:dist/css & live-server",
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start"
   },
@@ -38,6 +38,7 @@
     "sass": "^1.69.5"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1"
   }
 }

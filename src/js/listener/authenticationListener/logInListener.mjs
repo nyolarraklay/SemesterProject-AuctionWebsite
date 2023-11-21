@@ -13,7 +13,7 @@ export async function loginListener(event) {
     location.href = `./?view=profile&name=${name}`;
   } catch {
     return alert(
-      "Either your username was not found or your password is incorrect"
+      "Either your username was not found or your password is incorrect",
     );
   }
 }
