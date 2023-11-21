@@ -16,3 +16,49 @@ body {
     13px 13px 20px #cbced1,
     -13px -13px 20px #fff;
 }
+
+.navbar-nav > li > a {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-right: 20px;
+  color: black;
+}
+
+.navbar-toggler {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.nav-wrapper {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-color: #000;
+  clip-path: polygon(81% 0, 100% 0, 100% 50%, 100% 100%, 71% 100%);
+  transition: 1s all;
+}
+
+.navbar-brand {
+  padding: 14px 20px;
+}
+
+.navbar-blue:hover .nav-wrapper {
+  clip-path: polygon(81% 0, 100% 0, 100% 50%, 100% 100%, 65% 100%);
+}
+
+.navbar-blue {
+  background-color: #5ddac6;
+}
+
+.all-show {
+  z-index: 10;
+}
+
+#logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}

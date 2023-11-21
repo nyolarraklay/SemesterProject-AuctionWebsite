@@ -1,6 +1,6 @@
 {
   "name": "semesterproject-auctionwebsite",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "auction website",
   "type": "module",
   "main": "src/index.mjs",
@@ -8,7 +8,7 @@
     "test": "node src/js/index.mjs",
     "format": "prettier -w src/**/*.mjs",
     "lint": "eslint src/**/*.mjs",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "lint-fix": "eslint src/**/*.mjs --cache --fix",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "start": "live-server",
