@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A & Z Auction | All Listings</title>
+    <title>A & Z Auction | Registration</title>
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -31,7 +31,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
-    <script src="../js/index.mjs" defer type="module"></script>
   </head>
   <body>
     <div class="d-flex flex-column justify-content-between h-100">
@@ -65,7 +64,7 @@
                 <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Auction</a>
+                <a class="nav-link" href="/src/html/listings.html">Auction</a>
               </li>
 
               <li class="nav-item">
@@ -73,7 +72,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/src/html/register.html">Register</a>
+                <a class="nav-link disabled" href="#">Register</a>
               </li>
 
               <li class="nav-item">
@@ -99,55 +98,56 @@
           </div>
         </div>
       </nav>
-        
-      <div class="container mt-3">
-          <div class="API-title row row-cols-3 "></div>
-        <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                  Edit Post
-                </h1>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form id="editPost" data-bs-id="${postData.id}">
-                  <div class="form-group mb-3">
-                    <label for="">Title</label>
-                    <input type="text" class="form-control" name="title" />
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="">Body</label>
-                    <textarea class="form-control" name="body"></textarea>
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="">Tags</label>
-                    <input type="text" class="form-control" name="tags" />
-                  </div>
-                  <div class="form-group mb-3">
-                    <label for="">Media</label>
-                    <input type="url" class="form-control" name="media" />
-                  </div>
-                  <button type="submit" class="btn btn-primary">
-                    Update Post
-                  </button>
-                </form>
-              </div>
-            </div>
+
+      <div class="wrapper">
+        <div>
+          <h1 class="h4 text-center mt-4 mb-5">Register New Customer</h1>
+          <div class="text-start bg-white shadow rounded p-3 input-group-lg">
+            <form id="loginForm p-3 mt-3">
+              <label for="registerName" class="form-label">Name</label>
+              <input
+                type="name"
+                class="form-control border border-secondary"
+                id="registerName"
+                name="name"
+                required
+              />
+
+              <label for="registerEmail" class="form-label"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                class="form-control border border-secondary"
+                id="registerEmail"
+                name="email"
+                pattern="[\w\-.]+@(stud.)?noroff.no$"
+                title="Only Noroff student or teacher emails are valid"
+                required
+              />
+
+              <label for="registerPassword" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control border border-secondary"
+                id="registerPassword"
+                name="password"
+                minlength="8"
+                required
+              />
+              <label for="avatar" class="form-label">Profile picture</label>
+              <input
+                type="avatar"
+                class="form-control border border-secondary"
+                id="avatar"
+                name="avatar"
+                minlength="8"
+              />
+
+              <button type="submit" class="btn btn-primary w-100 my-3">
+                Register
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -204,45 +204,6 @@
           </div>
         </div>
       </footer>
-    </div>
-  </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!--main-->
-  
     </div>
   </body>
 </html>

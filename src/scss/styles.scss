@@ -1,5 +1,3 @@
-@import "userStyles";
-
 @import "_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -7,3 +5,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot";
 
 @import "_navbar";
+
+@import "userStyles";

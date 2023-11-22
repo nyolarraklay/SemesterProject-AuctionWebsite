@@ -2,18 +2,14 @@ export function postsTemplate(postData) {
   const timeLinePosts = document.createElement("div");
   timeLinePosts.classList.add("card");
   timeLinePosts.classList.add("mb-3");
+  timeLinePosts.classList.add("col");
+  timeLinePosts.classList.add("cardBG");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
-
-  const userImageAndName = document.createElement("div");
-  userImageAndName.classList.add("d-flex");
-  const image = document.createElement("img");
-  image.classList.add("rounded-circle");
-  image.classList.add("avatar");
-
-  const user = document.createElement("div");
-  user.classList.add("ms-2");
+  cardBody.classList.add("d-flex");
+  cardBody.classList.add("flex-column");
+  cardBody.classList.add("justify-content-between");
 
   const post = document.createElement("h5");
   post.classList.add("post");
@@ -21,36 +17,43 @@ export function postsTemplate(postData) {
   post.classList.add("m-0");
   post.innerText = postData.title;
 
+  const postBody = document.createElement("p");
+  postBody.classList.add("post");
+  postBody.classList.add("fs-7");
+  postBody.classList.add("card-text");
+  postBody.innerText = postData.description;
+
+  const postContent = document.createElement("div");
+  postContent.append(post, postBody);
+
   const date = document.createElement("p");
   date.classList.add("fs-8");
   date.classList.add("m-0");
   date.classList.add("text-body-secondary");
-  date.innerText = postData.created;
+  date.innerText = `created ${postData.created}`;
 
-  user.append(post, date);
-  userImageAndName.append(image, user);
+  const endDate = document.createElement("p");
+  endDate.classList.add("fs-8");
+  endDate.classList.add("m-0");
+  endDate.classList.add("text-body-secondary");
+  endDate.innerText = `Bidding ends at ${postData.endsAt}`;
 
-  const postBody = document.createElement("p");
-  postBody.classList.add("post");
-  postBody.classList.add("card-text");
-  postBody.innerText = postData.description;
+  const dateContent = document.createElement("div");
+  dateContent.append(date, endDate);
 
-  const editContainer = document.createElement("div");
-  editContainer.classList.add("dotIcon");
-  const icon = document.createElement("i");
-  icon.classList.add("modalOne");
-  icon.classList.add("bi");
-  icon.classList.add("bi-three-dots");
-  icon.dataset.bsToggle = "modal";
-  icon.dataset.bsTarget = "#staticBackdrop";
-  icon.dataset.bsId = postData.id;
-  const deleteIcon = document.createElement("i");
-  deleteIcon.classList.add("ms-3");
-  deleteIcon.classList.add("bi");
-  deleteIcon.classList.add("bi-x");
-  deleteIcon.dataset.bsId = postData.id;
+  const bids = document.createElement("h7");
+  bids.classList.add("m-0");
+  bids.innerText = `Bids ${postData._count.bids}`;
 
-  editContainer.append(icon, deleteIcon);
+  const bidNow = document.createElement("button");
+  bidNow.classList.add("btn");
+  bidNow.classList.add("btn-secondary");
+  bidNow.classList.add("my-3");
+  bidNow.classList.add("fs-7");
+  bidNow.innerText = "Bid Now";
+
+  const bidContent = document.createElement("div");
+  bidContent.append(bidNow);
 
   const cardTop = document.createElement("div");
   cardTop.classList.add("d-flex");
@@ -63,11 +66,8 @@ export function postsTemplate(postData) {
     img.classList.add("card-img-bottom");
     img.src = postData.media;
     img.alt = `Image from ${postData.title}`;
-    cardTop.append(userImageAndName, editContainer);
-    cardBody.append(cardTop);
-    cardBody.append(postBody);
     imageContainer.append(img);
-    cardBody.append(imageContainer);
+    cardBody.append(imageContainer, postContent, dateContent, bids, bidContent);
     timeLinePosts.append(cardBody);
     return timeLinePosts;
   }
