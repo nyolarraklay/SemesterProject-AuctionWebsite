@@ -20,7 +20,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="./src/js/index.mjs" defer type="module"></script>
+    <script src="../js/index.mjs" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -82,7 +82,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">contact</a>
+                <a class="nav-link" href="./contactPage.html">contact</a>
               </li>
             </ul>
             <div class="d-flex flex-column">
@@ -173,18 +173,28 @@
             </div>
             <div class="col-lg-2 col-md-6">
               <h7>Site Map</h7>
-              <p class="mx-2 fs-8 mb-0">Home</p>
-              <p class="mx-2 fs-8 mb-0">Auction</p>
-              <p class="mx-2 fs-8 mb-0">LogIn</p>
-              <p class="mx-2 fs-8 mb-0">Register</p>
-              <p class="mx-2 fs-8 mb-0">Contact Us</p>
+              <a href="homePage.html"><p class="mx-2 fs-8 mb-0">Home</p></a>
+              <a href="#"><p class="mx-2 fs-8 mb-0">Auction</p></a>
+              <a href="/index.html"><p class="mx-2 fs-8 mb-0">LogIn</p></a>
+              <a href="register.html"><p class="mx-2 fs-8 mb-0">Register</p></a>
+              <a href="contactPage.html"
+                ><p class="mx-2 fs-8 mb-0">Contact Us</p></a
+              >
             </div>
             <div class="col-lg-2 col-md-6">
               <h6>Social Media</h6>
-              <p class="mx-2 fs-8 mb-0">Facebook</p>
-              <p class="mx-2 fs-8 mb-0">Instagram</p>
-              <p class="mx-2 fs-8 mb-0">Twitter</p>
-              <p class="mx-2 fs-8 mb-0">TikTok</p>
+              <a href="https://www.facebook.com"
+                ><p class="mx-2 fs-8 mb-0">Facebook</p></a
+              >
+              <a href="https://www.instagram.com"
+                ><p class="mx-2 fs-8 mb-0">Instagram</p></a
+              >
+              <a href="https://www.twitter.com"
+                ><p class="mx-2 fs-8 mb-0">Twitter</p></a
+              >
+              <a href="https://www.tiktok.com"
+                ><p class="mx-2 fs-8 mb-0">TikTok</p></a
+              >
             </div>
             <div class="col-lg-4 col-md-6">
               <h5 class="mb-3">Newsletter</h5>
@@ -197,8 +207,8 @@
                   <input
                     class="form-control"
                     type="text"
-                    placeholder="Recipient's username"
-                    aria-label="Recipient's username"
+                    placeholder="Recipient's Email"
+                    aria-label="Recipient's Email"
                     aria-describedby="button-addon2"
                   />
                   <button
@@ -206,6 +216,7 @@
                     id="button-addon2"
                     type="button"
                   >
+                    <span class="d-none">button</span>
                     <i class="bi bi-send"></i>
                   </button>
                 </div>

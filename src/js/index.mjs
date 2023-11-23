@@ -11,3 +11,8 @@ templates.renderPostsTemplate();
 // const id = "8e0e1ea9-6990-4182-9a91-a5b52756b12a";
 
 // templates.renderPostTemplate(id);
+
+import { clickShowListsButton, iconClick } from "./redirection/index.mjs";
+
+clickShowListsButton();
+iconClick();
