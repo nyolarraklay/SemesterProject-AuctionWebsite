@@ -53,6 +53,7 @@ export function postsTemplate(postData) {
   bidNow.innerText = "Bid Now";
 
   const bidContent = document.createElement("div");
+  bidContent.classList.add("bidNow");
   bidContent.append(bidNow);
 
   const cardTop = document.createElement("div");

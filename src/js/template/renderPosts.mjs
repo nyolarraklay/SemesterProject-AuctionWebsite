@@ -1,5 +1,6 @@
 import { postsTemplate } from "./postsTemplate.mjs";
 import { getPosts } from "../posts/viewLists.mjs";
+import { searchPostsSetUp } from "../sort/index.mjs";
 
 export async function renderPostsTemplate() {
   try {
@@ -8,6 +9,7 @@ export async function renderPostsTemplate() {
     const publishContent = publish.map(postsTemplate);
     const container = document.querySelector(".API-title");
     container.append(...publishContent);
+    searchPostsSetUp(publish);
   } catch (error) {
     error;
   }

@@ -3,6 +3,7 @@
 // userInterface();
 
 import * as templates from "./template/renderPosts.mjs";
+import * as sort from "./template/sortedPosts.mjs";
 
 templates.renderPostsTemplate();
 
@@ -12,7 +13,17 @@ templates.renderPostsTemplate();
 
 // templates.renderPostTemplate(id);
 
-import { clickShowListsButton, iconClick } from "./redirection/index.mjs";
+import {
+  clickShowListsButton,
+  iconClick,
+  mustLogIn,
+} from "./redirection/index.mjs";
 
 clickShowListsButton();
 iconClick();
+
+setTimeout(mustLogIn, 100);
+
+sort.renderSortedPostsTemplateOldtoNew();
+sort.renderSortedPostsTemplateNewtoOld();
+sort.renderSortedPostsTemplateHighestBid();
