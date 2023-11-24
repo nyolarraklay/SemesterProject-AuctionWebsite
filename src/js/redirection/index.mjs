@@ -22,7 +22,7 @@ export function mustLogIn() {
   bidNow.forEach((redirect) => {
     redirect.addEventListener("click", function () {
       if (isLoggedIn) {
-        document.location.href = "/index.html";
+        document.location.href = "./listings.html";
       } else {
         alert("You need to be logged in to access this page.");
       }

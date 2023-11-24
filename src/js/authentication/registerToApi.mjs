@@ -1,4 +1,5 @@
 import * as constant from "../constant/index.mjs";
+import { headers } from "./headers.mjs";
 
 const method = "post";
 
@@ -11,9 +12,7 @@ export async function registerToAPI(name, email, password, avatar) {
   const response = await fetch(logInURL, {
     method,
     body: JSON.stringify({ name, email, password, avatar }),
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: headers("application/json"),
   });
 
   if (response.ok) {
