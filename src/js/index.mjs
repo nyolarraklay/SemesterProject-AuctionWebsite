@@ -4,6 +4,7 @@
 
 import * as templates from "./template/renderPosts.mjs";
 import * as sort from "./template/sortedPosts.mjs";
+import userInterface from "./userInterface/index.mjs";
 
 templates.renderPostsTemplate();
 
@@ -27,3 +28,4 @@ setTimeout(mustLogIn, 100);
 sort.renderSortedPostsTemplateOldtoNew();
 sort.renderSortedPostsTemplateNewtoOld();
 sort.renderSortedPostsTemplateHighestBid();
+userInterface();

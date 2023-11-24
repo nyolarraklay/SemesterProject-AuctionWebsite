@@ -1,24 +1,23 @@
 import * as auth from "../../authentication/index.mjs";
 
-export async function registerListener(event) {
-  event.preventDefault();
-  const form = event.target;
-  const data = new FormData(form);
-  const email = data.get("email");
-  const name = data.get("name");
-  const password = data.get("password");
-  const avatar = data.get("avatar");
+export function registerListener(event) {
+  const registerForm = document.querySelector("form#registerForm");
 
-  try {
-    await auth.registerToAPI(name, email, password, avatar);
-  } catch {
-    return alert("There was a problem creating your account");
-  }
+  if (registerForm) {
+    registerForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const registerNewUser = event.target;
+      const registerData = new FormData(registerNewUser);
+      const email = registerData.get("email");
+      const name = registerData.get("name");
+      const password = registerData.get("password");
+      const avatar = registerData.get("avatar");
 
-  try {
-    await auth.logIn(email, password);
-    location.reload();
-  } catch {
-    return alert("There was a problem logging into your new account");
+      try {
+        auth.registerToAPI(name, email, password, avatar);
+      } catch {
+        return alert("There was a problem creating your account");
+      }
+    });
   }
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A & Z Auction | Registration</title>
+    <title>A & Z Auction | All Listings</title>
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -31,6 +31,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <script src="../js/index.mjs" defer type="module"></script>
   </head>
   <body>
     <div class="d-flex flex-column justify-content-between h-100">
@@ -61,20 +62,25 @@
           >
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./homePage.html"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../html/homePage.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/src/html/listings.html">Auction</a>
+                <a class="nav-link disabled" href="#">Auction</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../../index.html">Log-in</a>
+                <a class="nav-link" href="../../index.html">Log-Out</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Register</a>
+                <a class="nav-link" href="/src/html/register.html"
+                  >Edit Profile</a
+                >
               </li>
 
               <li class="nav-item">
@@ -102,56 +108,13 @@
         </div>
       </nav>
 
-      <div class="wrapper">
-        <div>
-          <h1 class="h4 text-center mt-4 mb-5">Register New Customer</h1>
-          <div class="text-start bg-white shadow rounded p-3 input-group-lg">
-            <form id="registerForm" class="p-3 mt-3">
-              <label for="registerName" class="form-label">Name</label>
-              <input
-                type="text"
-                class="form-control border border-secondary"
-                id="registerName"
-                name="name"
-                required
-              />
-
-              <label for="registerEmail" class="form-label"
-                >Email Address</label
-              >
-              <input
-                type="email"
-                class="form-control border border-secondary"
-                id="registerEmail"
-                name="email"
-                pattern="[\w\-.]+@(stud.)?noroff.no$"
-                title="Only Noroff student or teacher emails are valid"
-                required
-              />
-
-              <label for="registerPassword" class="form-label">Password</label>
-              <input
-                type="password"
-                class="form-control border border-secondary"
-                id="registerPassword"
-                name="password"
-                minlength="8"
-                required
-              />
-              <label for="avatar" class="form-label">Profile picture</label>
-              <input
-                class="form-control border border-secondary"
-                id="avatar"
-                name="avatar"
-                minlength="8"
-              />
-
-              <button type="submit" class="btn btn-primary w-100 my-3">
-                Register
-              </button>
-            </form>
-          </div>
+      <div class="container mt-3">
+        <div class="mb-2 mt-2">
+          <button class="btn btn-primary featured">Featured Auction</button>
+          <button class="btn btn-primary ongoing">Ongoing Auction</button>
+          <button class="btn btn-primary upcoming">Upcoming Auction</button>
         </div>
+        <div class="API-title row row-cols-3"></div>
       </div>
 
       <footer class="bg-primary py-4 flex-shrink-0 d-none d-sm-block">
@@ -166,9 +129,9 @@
             <div class="col-lg-2 col-md-6">
               <h7>Site Map</h7>
               <a href="homePage.html"><p class="mx-2 fs-8 mb-0">Home</p></a>
-              <a href="listings.html"><p class="mx-2 fs-8 mb-0">Auction</p></a>
+              <a href="#"><p class="mx-2 fs-8 mb-0">Auction</p></a>
               <a href="/index.html"><p class="mx-2 fs-8 mb-0">LogIn</p></a>
-              <a href="#"><p class="mx-2 fs-8 mb-0">Register</p></a>
+              <a href="register.html"><p class="mx-2 fs-8 mb-0">Register</p></a>
               <a href="contactPage.html"
                 ><p class="mx-2 fs-8 mb-0">Contact Us</p></a
               >

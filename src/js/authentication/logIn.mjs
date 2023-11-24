@@ -1,12 +1,13 @@
 import { API_BASE_URL, logInAction } from "../constant/index.mjs";
-import { headers } from "./headers.mjs";
 import { save } from "../storage/index.mjs";
 
 export async function login(email, password) {
   const response = await fetch(`${API_BASE_URL}${logInAction}`, {
     method: "post",
     body: JSON.stringify({ email, password }),
-    headers: headers("application/json"),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 
   if (response.ok) {
