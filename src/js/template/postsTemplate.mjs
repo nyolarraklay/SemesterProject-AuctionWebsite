@@ -60,7 +60,7 @@ export function postsTemplate(postData) {
   cardTop.classList.add("d-flex");
   cardTop.classList.add("justify-content-between");
   const imageContainer = document.createElement("a");
-  imageContainer.href = `/posts/UserPost/index.html?id=${postData.id}`;
+  imageContainer.href = `/src/html/details.html?id=${postData.id}`;
 
   if (postData.media !== undefined) {
     const img = document.createElement("img");

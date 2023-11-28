@@ -1,7 +1,6 @@
 import { API_BASE_URL, logInAction } from "../constant/index.mjs";
 import { save } from "../storage/index.mjs";
 import { headers } from "./headers.mjs";
-import { updateLogButton } from "../userInterface/authentication.mjs";
 
 export async function login(email, password) {
   const response = await fetch(`${API_BASE_URL}${logInAction}`, {
@@ -15,7 +14,6 @@ export async function login(email, password) {
   save("profile", user);
 
   if (response.ok) {
-    updateLogButton();
     document.location.href = "src/html/homePage.html";
   } else {
     alert(

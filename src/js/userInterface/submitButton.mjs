@@ -8,6 +8,7 @@ export const submitDataLogIn = () => {
     .querySelector("form#loginForm")
     .addEventListener("submit", logInListener);
 };
+
 export const submitDataRegister = () => {
   const register = document.querySelector("form#registerForm");
   register.addEventListener("submit", registerListener);

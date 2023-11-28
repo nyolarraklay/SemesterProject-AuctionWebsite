@@ -136,3 +136,13 @@ footer p {
     transform 0.2s ease-in-out,
     -webkit-transform 0.2s ease-in-out;
 }
+
+.details-card {
+  max-width: 580px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

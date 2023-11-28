@@ -2,11 +2,9 @@
 
 // userInterface();
 
-import * as templates from "./template/renderPosts.mjs";
+import * as templates from "./template/index.mjs";
 import * as sort from "./template/sortedPosts.mjs";
 import * as userInterface from "./userInterface/index.mjs";
-
-templates.renderPostsTemplate();
 
 // import * as templates from "./template/renderPost.mjs";
 
@@ -27,14 +25,28 @@ iconClick();
 
 setTimeout(mustLogIn, 100);
 
-sort.renderSortedPostsTemplateOldtoNew();
-sort.renderSortedPostsTemplateNewtoOld();
-sort.renderSortedPostsTemplateHighestBid();
-
 if (path === "/index.html") {
   userInterface.submitDataLogIn();
 }
 
-if (path === "./src/html/register.html") {
+if (path === "/src/html/register.html") {
   userInterface.submitDataRegister();
+}
+
+if (path === "/src/html/details.html") {
+  templates.renderPostTemplate();
+}
+
+if (path === "/src/html/listings.html") {
+  templates.renderPostsTemplate();
+  sort.renderSortedPostsTemplateOldtoNew();
+  sort.renderSortedPostsTemplateNewtoOld();
+  sort.renderSortedPostsTemplateHighestBid();
+}
+
+if (path === "/src/html/homePage.html") {
+  templates.renderPostsTemplate();
+  sort.renderSortedPostsTemplateOldtoNew();
+  sort.renderSortedPostsTemplateNewtoOld();
+  sort.renderSortedPostsTemplateHighestBid();
 }
