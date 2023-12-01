@@ -11,7 +11,6 @@ export async function renderProfilePage() {
 
     const showData = profileTemplate(postData);
     const container = document.querySelector(".profileContainer");
-    console.log(showData);
     container.append(showData);
   } catch (error) {
     error;

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A & Z Auction | All Listings</title>
     <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -108,6 +110,93 @@
         </div>
       </nav>
       <div class="profileContainer"></div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title fs-5" id="staticBackdropLabel">
+                My Profile
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="wrapper">
+                <div>
+                  <h1 class="h4 text-center mt-4 mb-5">Update your Profile</h1>
+                  <div
+                    class="text-start bg-white shadow rounded p-3 input-group-lg"
+                  >
+                    <form id="updateRegisterForm" class="p-3 mt-3">
+                      <label for="registerName" class="form-label">Name</label>
+                      <input
+                        type="text"
+                        class="form-control border border-secondary"
+                        id="registerName"
+                        name="name"
+                        required
+                      />
+
+                      <label for="registerEmail" class="form-label"
+                        >Email Address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control border border-secondary"
+                        id="registerEmail"
+                        name="email"
+                        pattern="[\w\-.]+@(stud.)?noroff.no$"
+                        title="Only Noroff student or teacher emails are valid"
+                        required
+                      />
+
+                      <label for="avatar" class="form-label"
+                        >Profile picture</label
+                      >
+                      <input
+                        class="form-control border border-secondary"
+                        id="avatar"
+                        name="avatar"
+                        minlength="8"
+                      />
+
+                      <button
+                        type="submit"
+                        class="btn btn-primary w-100 my-3 profileButton"
+                      >
+                        Update
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <footer class="bg-primary py-4 flex-shrink-0 d-none d-sm-block">
         <div class="container py-4">

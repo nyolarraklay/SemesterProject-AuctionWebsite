@@ -89,14 +89,16 @@ export function singlePostTemplate(postData) {
   sellerdetails.append(post, sellerEmail, sellerwins);
   userImageAndName.append(image, sellerdetails);
 
-  const bidder = document.createElement("h5");
+  const bidder = document.createElement("h4");
   bidder.classList.add("mt-4");
   bidder.innerText = "Bids";
 
-  postData.bids.forEach((element) => {
-    const bidderDetails = document.createElement("div");
-    bidderDetails.classList.add("mt-2");
+  const orderedList = document.createElement("ol");
 
+  postData.bids.forEach((element) => {
+    const bidderDetails = document.createElement("li");
+    bidderDetails.classList.add("mt-2");
+    bidderDetails.classList.add("h6");
     const biddeName = document.createElement("h7");
     biddeName.classList.add("post");
     biddeName.classList.add("card-title");
@@ -115,7 +117,8 @@ export function singlePostTemplate(postData) {
     bidderCreated.innerText = `Created: ${element.created}`;
 
     bidderDetails.append(biddeName, amount, bidderCreated);
-    bidder.append(bidderDetails);
+    orderedList.appendChild(bidderDetails);
+    bidder.append(orderedList);
   });
 
   detailsTitle.append(postBody, seller, userImageAndName, bidder);

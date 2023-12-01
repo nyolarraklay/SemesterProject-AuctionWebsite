@@ -147,24 +147,18 @@ footer p {
   object-fit: cover;
 }
 
-.containerProfile {
+.cardProfile {
   width: 380px;
   border: none;
   border-radius: 15px;
   padding: 8px;
-  background-color: #fff;
+  background-color: #d5ecf5;
   position: relative;
   height: 370px;
 }
 
-.topSection {
-  height: 100px;
-}
-
-.topSection img {
-  width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.profileDetails {
+  margin-top: 120px;
 }
 
 .userProfile {
@@ -173,13 +167,19 @@ footer p {
 
 .profile {
   position: absolute;
-  top: -50px;
+  top: 20px;
   left: 38%;
   height: 90px;
   width: 90px;
-  border: 3px solid #fff;
+  border: 3px solid #5ddac6;
 
   border-radius: 50%;
+}
+
+.profile img {
+  height: 80px;
+  width: 80px;
+  margin-top: 2px;
 }
 
 .editButton {
@@ -193,12 +193,11 @@ footer p {
   font-size: 29px;
 }
 
-.profileContainer {
-  height: 50vh;
-}
-
 .bodyProfile {
   background-color: #545454;
-
   font-weight: 300;
+}
+
+.containerDetail {
+  height: 100vh;
 }

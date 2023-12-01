@@ -4,14 +4,10 @@ export function profileTemplate(postData) {
   containerProfile.classList.add("d-flex");
   containerProfile.classList.add("justify-content-center");
   containerProfile.classList.add("align-items-center");
+  containerProfile.classList.add("containerDetail");
 
-  const profileCard = document.createElement("div");
-  profileCard.classList.add("topSection");
-  const profileBanner = document.createElement("img");
-  profileBanner.src = "https://source.unsplash.com/random/30";
-  profileBanner.classList.add("img-fluid");
-
-  profileCard.append(profileBanner);
+  const card = document.createElement("div");
+  card.classList.add("cardProfile");
 
   const profileAvatar = document.createElement("div");
   profileAvatar.classList.add("userProfile");
@@ -21,10 +17,9 @@ export function profileTemplate(postData) {
 
   const profileDetails = document.createElement("div");
   profileDetails.classList.add("profileDetails");
-  profileDetails.classList.add("mt-5");
   profileDetails.classList.add("text-center");
-  const h4 = document.createElement("h4");
-  h4.classList.add("mb-0");
+  const h4 = document.createElement("h2");
+
   h4.innerText = postData.name;
   const spanEmail = document.createElement("span");
   spanEmail.classList.add("d-block");
@@ -32,9 +27,12 @@ export function profileTemplate(postData) {
   spanEmail.innerText = postData.email;
   const editButton = document.createElement("button");
   editButton.classList.add("btn");
-  editButton.classList.add("btn-primary");
+  editButton.classList.add("btn-secondary");
   editButton.classList.add("btn-sm");
   editButton.classList.add("editButton");
+  editButton.dataset.bsToggle = "modal";
+  editButton.dataset.bsTarget = "#staticBackdrop";
+  editButton.innerText = "edit profile";
   const statsContainer = document.createElement("div");
   statsContainer.classList.add("d-flex");
   statsContainer.classList.add("justify-content-between");
@@ -57,7 +55,7 @@ export function profileTemplate(postData) {
   statsWins.classList.add("mb-0");
   statsWins.innerText = "Wins";
   const winsData = document.createElement("span");
-  winsData.innerText = "0";
+  winsData.innerText = 0 + postData.wins;
 
   wins.append(statsWins, winsData);
 
@@ -71,8 +69,9 @@ export function profileTemplate(postData) {
 
   if (postData.avatar !== undefined) {
     const profileImage = document.createElement("img");
-    profileImage.src = postData.avatar;
     profileImage.classList.add("avatar");
+    profileImage.classList.add("rounded-circle");
+    profileImage.src = postData.avatar;
     profileImage.alt = `Image from ${postData.name}`;
     profile.append(profileImage);
     profileAvatar.append(profile);
@@ -80,7 +79,8 @@ export function profileTemplate(postData) {
     statsContainer.append(credits, wins, listingsStat);
     profileDetails.append(h4, spanEmail, editButton, statsContainer);
 
-    containerProfile.append(profileCard, profileAvatar, profileDetails);
+    card.append(profileAvatar, profileDetails);
+    containerProfile.append(card);
     return containerProfile;
   }
 }

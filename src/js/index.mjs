@@ -1,17 +1,6 @@
-// import userInterface from "./userInterface/index.mjs";
-
-// userInterface();
-
 import * as templates from "./template/index.mjs";
 import * as sort from "./template/sortedPosts.mjs";
 import * as userInterface from "./userInterface/index.mjs";
-
-// import * as templates from "./template/renderPost.mjs";
-
-// const id = "8e0e1ea9-6990-4182-9a91-a5b52756b12a";
-
-// templates.renderPostTemplate(id);
-
 import {
   clickShowListsButton,
   iconClick,
@@ -58,4 +47,5 @@ if (path === "/src/html/details.html") {
 
 if (path === "/src/html/profilePage.html") {
   templates.renderProfilePage();
+  userInterface.submitUpdateDataRegister();
 }
