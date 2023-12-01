@@ -16,6 +16,7 @@ import {
   clickShowListsButton,
   iconClick,
   mustLogIn,
+  viewProfile,
 } from "./redirection/index.mjs";
 
 const path = location.pathname;
@@ -49,4 +50,12 @@ if (path === "/src/html/homePage.html") {
   sort.renderSortedPostsTemplateOldtoNew();
   sort.renderSortedPostsTemplateNewtoOld();
   sort.renderSortedPostsTemplateHighestBid();
+}
+
+if (path === "/src/html/details.html") {
+  viewProfile();
+}
+
+if (path === "/src/html/profilePage.html") {
+  templates.renderProfilePage();
 }

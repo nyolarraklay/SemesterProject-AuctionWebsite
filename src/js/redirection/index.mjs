@@ -1,4 +1,5 @@
 import { isLoggedIn } from "../authentication/status.mjs";
+import { renderProfilePage } from "../template/renderProfilePage.mjs";
 
 export function clickShowListsButton() {
   const showListButton = document.querySelectorAll(".card-footer button");
@@ -27,5 +28,13 @@ export function mustLogIn() {
         alert("You need to be logged in to access this page.");
       }
     });
+  });
+}
+
+export function viewProfile() {
+  const viewProfile = document.querySelector(".myProfile");
+
+  viewProfile.addEventListener("click", function redirectToProfilePage() {
+    location.href = "/src/html/profilePage.html";
   });
 }

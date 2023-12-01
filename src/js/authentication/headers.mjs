@@ -14,3 +14,7 @@ export const headers = (contentType) => {
 
   return headers;
 };
+
+export async function fetchTokens(url, options) {
+  return fetch(url, { ...options, headers: headers() });
+}

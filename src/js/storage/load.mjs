@@ -1,7 +1,8 @@
-export const load = (key) => {
+export function load(key) {
   try {
-    return JSON.parse(localStorage.getItem(key));
-  } catch {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value);
+  } catch (error) {
     return null;
   }
-};
+}
