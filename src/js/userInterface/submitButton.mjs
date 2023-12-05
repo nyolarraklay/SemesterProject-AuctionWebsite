@@ -2,6 +2,7 @@ import {
   logInListener,
   registerListener,
   setUpdateProfileListener,
+  logoutListener,
 } from "../listener/authenticationListener/index.mjs";
 import { load } from "../storage/load.mjs";
 
@@ -29,3 +30,8 @@ export const submitUpdateDataRegister = () => {
   }
   updateRegistry.addEventListener("submit", setUpdateProfileListener);
 };
+
+export async function logOutWebsite() {
+  const logOutButton = document.querySelector(".logOutButton");
+  logOutButton.addEventListener("click", logoutListener());
+}
