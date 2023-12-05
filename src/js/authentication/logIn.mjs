@@ -1,6 +1,7 @@
 import { API_BASE_URL, logInAction } from "../constant/index.mjs";
 import { save } from "../storage/index.mjs";
 import { headers } from "./headers.mjs";
+import { isLoggedIn } from "./status.mjs";
 
 export async function login(email, password) {
   const response = await fetch(`${API_BASE_URL}${logInAction}`, {
@@ -15,6 +16,7 @@ export async function login(email, password) {
 
   if (response.ok) {
     document.location.href = "src/html/homePage.html";
+    isLoggedIn();
   } else {
     alert(
       "You are not registered. Please check if your email and password are correct. "

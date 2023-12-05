@@ -8,6 +8,8 @@ import {
   viewProfile,
 } from "./redirection/index.mjs";
 
+import { isLoggedIn } from "./authentication/index.mjs";
+
 const path = location.pathname;
 
 clickShowListsButton();
@@ -28,17 +30,19 @@ if (path === "/src/html/details.html") {
 }
 
 if (path === "/src/html/listings.html") {
-  templates.renderPostsTemplate();
-  sort.renderSortedPostsTemplateOldtoNew();
-  sort.renderSortedPostsTemplateNewtoOld();
-  sort.renderSortedPostsTemplateHighestBid();
+  if (isLoggedIn) {
+    templates.renderView();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
 }
 
 if (path === "/src/html/homePage.html") {
-  templates.renderPostsTemplate();
-  sort.renderSortedPostsTemplateOldtoNew();
-  sort.renderSortedPostsTemplateNewtoOld();
-  sort.renderSortedPostsTemplateHighestBid();
+  if (isLoggedIn) {
+    templates.renderView();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
 }
 
 if (path === "/src/html/details.html") {

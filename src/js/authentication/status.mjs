@@ -1,5 +1,6 @@
 import { load } from "../storage/index.mjs";
 
-export const isLoggedIn = () => Boolean(load("token"));
-
-export const profile = () => load("profile");
+export const isLoggedIn = () => {
+  const token = load("token");
+  return Boolean(token);
+};

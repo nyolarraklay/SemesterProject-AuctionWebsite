@@ -1,5 +1,4 @@
 import * as auth from "../../authentication/index.mjs";
-import { updateLoginVisibility } from "../../userInterface/authentication.mjs";
 
 export function logoutListener() {
   try {
