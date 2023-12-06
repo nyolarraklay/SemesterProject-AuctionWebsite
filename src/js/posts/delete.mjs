@@ -9,4 +9,10 @@ export async function deletePost() {
     method: "delete",
     headers: headers(),
   });
+  if (response.ok) {
+    return await response.json();
+  }
+  const responseBody = await response.text();
+  alert(`Error: ${response.statusText}\n${responseBody}`);
+  throw new Error(response.statusText);
 }

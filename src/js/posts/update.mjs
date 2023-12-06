@@ -17,5 +17,7 @@ export async function updatePost(title, description, tags, media) {
     return update;
   }
 
+  const responseBody = await response.text();
+  alert(`Error: ${response.statusText}\n${responseBody}`);
   throw new Error(response.statusText);
 }

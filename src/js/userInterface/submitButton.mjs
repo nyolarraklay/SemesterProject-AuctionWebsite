@@ -50,6 +50,5 @@ export const submitUpdatePostListing = () => {
 
 export const deletePostListing = () => {
   const deleteButton = document.querySelector(".deleteButton");
-  console.log(deleteButton);
   deleteButton.addEventListener("click", deletePost);
 };

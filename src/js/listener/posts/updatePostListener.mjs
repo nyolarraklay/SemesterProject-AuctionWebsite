@@ -11,7 +11,7 @@ export async function updatePostListener(event) {
 
   try {
     await updatePost(title, description, tags, media);
-  } catch {
-    return alert("There was a problem posting your list");
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
   }
 }
