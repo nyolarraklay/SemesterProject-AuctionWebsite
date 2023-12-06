@@ -1,6 +1,6 @@
 {
   "name": "semesterproject-auctionwebsite",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "auction website",
   "type": "module",
   "main": "src/index.mjs",
