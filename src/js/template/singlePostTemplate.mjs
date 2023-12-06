@@ -12,7 +12,7 @@ export function singlePostTemplate(postData) {
   imageContainer.classList.add("col-md-4");
 
   const detailsDIv2 = document.createElement("div");
-  detailsDIv2.classList.add("col-md-8");
+  detailsDIv2.classList.add("col-md-6");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");
@@ -124,6 +124,11 @@ export function singlePostTemplate(postData) {
   detailsTitle.append(postBody, seller, userImageAndName, bidder);
 
   listDetails.append(detailsTitle);
+  const editButton = document.createElement("button");
+  editButton.classList.add("btn", "btn-secondary", "fs-8");
+  editButton.setAttribute("data-bs-toggle", "modal");
+  editButton.setAttribute("data-bs-target", "#staticBackdropEdit");
+  editButton.innerText = "edit";
 
   if (postData.media !== undefined) {
     const img = document.createElement("img");
@@ -137,7 +142,7 @@ export function singlePostTemplate(postData) {
     detailsDIv2.append(cardBody);
     cardBody.append(postTitle, postCreated, postEnded, bids);
 
-    detailsDIv.append(imageContainer, detailsDIv2);
+    detailsDIv.append(imageContainer, detailsDIv2, editButton);
     timeLinePosts.append(detailsDIv, listDetails);
     return timeLinePosts;
   }

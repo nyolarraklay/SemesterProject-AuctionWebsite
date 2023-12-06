@@ -6,3 +6,5 @@ export * from "./sortedPosts.mjs";
 export * from "./renderProfilePage.mjs";
 export * from "./profileTemplate.mjs";
 export * from "./renderView.mjs";
+export * from "./profileListingsTemplate.mjs";
+export * from "./renderProfileListings.mjs";

@@ -31,10 +31,10 @@ export function mustLogIn() {
   });
 }
 
-export function viewProfile() {
-  const viewProfile = document.querySelector(".myProfile");
+// export function viewProfile() {
+//   const viewProfile = document.querySelector(".myProfile");
 
-  viewProfile.addEventListener("click", function redirectToProfilePage() {
-    location.href = "/src/html/profilePage.html";
-  });
-}
+//   viewProfile.addEventListener("click", function redirectToProfilePage() {
+//     location.href = "/src/html/profilePage.html";
+//   });
+// }

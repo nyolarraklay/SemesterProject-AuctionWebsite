@@ -3,7 +3,7 @@ import { headers } from "../authentication/headers.mjs";
 
 export async function getPosts(limit = 30, offset = 0) {
   const response = await fetch(
-    `${API_BASE_URL}${listingsAll}?limit=${limit}&offset=${offset}`,
+    `${API_BASE_URL}${listingsAll}?limit=${limit}&offset=${offset}&_active=true`,
     { headers: headers() }
   );
   if (response.ok) {

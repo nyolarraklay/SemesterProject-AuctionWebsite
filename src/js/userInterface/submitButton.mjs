@@ -4,7 +4,9 @@ import {
   setUpdateProfileListener,
   logoutListener,
 } from "../listener/authenticationListener/index.mjs";
+import { postListener, updatePostListener } from "../listener/posts/index.mjs";
 import { load } from "../storage/load.mjs";
+import { deletePost } from "../posts/delete.mjs";
 
 export const submitDataLogIn = () => {
   document
@@ -35,3 +37,19 @@ export async function logOutWebsite() {
   const logOutButton = document.querySelector(".logOutButton");
   logOutButton.addEventListener("click", logoutListener());
 }
+
+export const submitPostListing = () => {
+  const register = document.querySelector("form#newPost");
+  register.addEventListener("submit", postListener);
+};
+
+export const submitUpdatePostListing = () => {
+  const register = document.querySelector("form#editPost");
+  register.addEventListener("submit", updatePostListener);
+};
+
+export const deletePostListing = () => {
+  const deleteButton = document.querySelector(".deleteButton");
+  console.log(deleteButton);
+  deleteButton.addEventListener("click", deletePost);
+};

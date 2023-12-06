@@ -5,7 +5,7 @@ import {
   clickShowListsButton,
   iconClick,
   mustLogIn,
-  viewProfile,
+  // viewProfile,
 } from "./redirection/index.mjs";
 
 import { isLoggedIn } from "./authentication/index.mjs";
@@ -27,6 +27,8 @@ if (path === "/src/html/register.html") {
 
 if (path === "/src/html/details.html") {
   templates.renderPostTemplate();
+  userInterface.submitUpdatePostListing();
+  userInterface.deletePostListing();
 }
 
 if (path === "/src/html/listings.html") {
@@ -45,11 +47,16 @@ if (path === "/src/html/homePage.html") {
   }
 }
 
-if (path === "/src/html/details.html") {
-  viewProfile();
-}
-
 if (path === "/src/html/profilePage.html") {
   templates.renderProfilePage();
   userInterface.submitUpdateDataRegister();
+  userInterface.updateLoginVisibility();
+  userInterface.header();
+}
+
+if (path === "/src/html/profileListings.html") {
+  templates.renderProfileListingsPage();
+  userInterface.submitPostListing();
+  userInterface.updateLoginVisibility();
+  userInterface.header();
 }
