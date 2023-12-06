@@ -39,5 +39,13 @@ export function header() {
     dropdown.append(dropdownLink, dropdownList);
 
     profileButton.append(dropdown);
+
+    const membersPage = document.querySelector("#members");
+    membersPage.innerHTML = "";
+    const membersLink = document.createElement("a");
+    membersLink.href = "/src/html/profileListings.html";
+    membersLink.classList.add("nav-link");
+    membersLink.innerText = "MEMBERS";
+    membersPage.append(membersLink);
   }
 }

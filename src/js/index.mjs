@@ -10,6 +10,8 @@ import {
 
 import { isLoggedIn } from "./authentication/index.mjs";
 
+import { authGuard, renderLoggedInView } from "./authGuard/index.mjs";
+
 const path = location.pathname;
 
 clickShowListsButton();
@@ -26,9 +28,14 @@ if (path === "/src/html/register.html") {
 }
 
 if (path === "/src/html/details.html") {
-  templates.renderPostTemplate();
-  userInterface.submitUpdatePostListing();
-  userInterface.deletePostListing();
+  if (isLoggedIn) {
+    templates.renderPostTemplate();
+    userInterface.submitUpdatePostListing();
+    userInterface.deletePostListing();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
+  authGuard(renderLoggedInView);
 }
 
 if (path === "/src/html/listings.html") {
@@ -48,15 +55,21 @@ if (path === "/src/html/homePage.html") {
 }
 
 if (path === "/src/html/profilePage.html") {
-  templates.renderProfilePage();
-  userInterface.submitUpdateDataRegister();
-  userInterface.updateLoginVisibility();
-  userInterface.header();
+  if (isLoggedIn) {
+    templates.renderProfilePage();
+    userInterface.submitUpdateDataRegister();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
+  authGuard(renderLoggedInView);
 }
 
 if (path === "/src/html/profileListings.html") {
-  templates.renderProfileListingsPage();
-  userInterface.submitPostListing();
-  userInterface.updateLoginVisibility();
-  userInterface.header();
+  if (isLoggedIn) {
+    templates.renderProfileListingsPage();
+    userInterface.submitPostListing();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
+  authGuard(renderLoggedInView);
 }
