@@ -43,7 +43,7 @@ export function header() {
     const membersPage = document.querySelector("#members");
     membersPage.innerHTML = "";
     const membersLink = document.createElement("a");
-    membersLink.href = "/src/html/profileListings.html";
+    membersLink.href = "/src/html/membersPage.html";
     membersLink.classList.add("nav-link");
     membersLink.innerText = "MEMBERS";
     membersPage.append(membersLink);

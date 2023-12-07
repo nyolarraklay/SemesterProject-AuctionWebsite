@@ -1,8 +1,6 @@
 export function singlePostTemplate(postData) {
   const timeLinePosts = document.createElement("div");
-  timeLinePosts.classList.add("card");
-  timeLinePosts.classList.add("mb-3");
-  timeLinePosts.classList.add("details-card");
+  timeLinePosts.classList.add("card", "mb-3", "details-card", "col");
 
   const detailsDIv = document.createElement("div");
   detailsDIv.classList.add("row");
@@ -62,6 +60,7 @@ export function singlePostTemplate(postData) {
   const image = document.createElement("img");
   image.classList.add("rounded-circle");
   image.classList.add("avatar");
+  image.alt = postData.seller.name;
   image.src = postData.seller.avatar;
 
   const sellerdetails = document.createElement("div");
@@ -93,6 +92,12 @@ export function singlePostTemplate(postData) {
   bidder.classList.add("mt-4");
   bidder.innerText = "Bids";
 
+  const bidNow = document.createElement("button");
+  bidNow.classList.add("btn", "btn-secondary", "fs-7", "ms-5");
+  bidNow.innerText = "Bid Now";
+  bidNow.setAttribute("data-bs-toggle", "modal");
+  bidNow.setAttribute("data-bs-target", "#bidModal");
+
   const orderedList = document.createElement("ol");
 
   postData.bids.forEach((element) => {
@@ -121,11 +126,11 @@ export function singlePostTemplate(postData) {
     bidder.append(orderedList);
   });
 
-  detailsTitle.append(postBody, seller, userImageAndName, bidder);
+  detailsTitle.append(postBody, seller, userImageAndName, bidder, bidNow);
 
   listDetails.append(detailsTitle);
   const editButton = document.createElement("button");
-  editButton.classList.add("btn", "btn-secondary", "fs-8");
+  editButton.classList.add("btn", "btn-secondary", "fs-7");
   editButton.setAttribute("data-bs-toggle", "modal");
   editButton.setAttribute("data-bs-target", "#staticBackdropEdit");
   editButton.innerText = "edit";

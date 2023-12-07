@@ -10,3 +10,13 @@ export async function getListings(name) {
     return registeredProfile;
   }
 }
+
+export async function getAllBids(name) {
+  const getPostURL = `${constant.API_BASE_URL}${constant.allProfiles}/${name}/bids`;
+
+  const response = await fetchTokens(getPostURL);
+  const registeredProfile = await response.json();
+  if (response.ok) {
+    return registeredProfile;
+  }
+}

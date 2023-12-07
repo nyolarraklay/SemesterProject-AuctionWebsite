@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A & Z Auction | Home</title>
+    <title>A & Z Auction | All Listings</title>
     <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -20,7 +22,6 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/index.mjs" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +35,7 @@
     />
     <script src="../js/index.mjs" defer type="module"></script>
   </head>
-  <body class="bg-dark-subtle">
+  <body class="bodyProfile">
     <div class="d-flex flex-column justify-content-between h-100">
       <nav class="navbar navbar-expand-lg navbar-blue navbar-dark">
         <div class="nav-wrapper"></div>
@@ -63,26 +64,27 @@
           >
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link disabled" aria-current="page" href="#"
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../html/homePage.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./listings.html">Auction</a>
+                <a class="nav-link" href="../html/listings.html">Auction</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="../../index.html" id="logButton"
-                  >Log-in</a
-                >
+                <a class="nav-link" href="#" id="logButton">Log-out</a>
               </li>
 
               <li class="nav-item" id="myProfile">
-                <a class="nav-link" href="/src/html/register.html">Register</a>
+                <a class="nav-link" href="#">View Profile</a>
               </li>
 
               <li class="nav-item" id="members">
-                <a class="nav-link" href="./contactPage.html">contact</a>
+                <a class="nav-link" href="#">Members</a>
               </li>
             </ul>
             <div class="d-flex flex-column">
@@ -105,108 +107,8 @@
           </div>
         </div>
       </nav>
-
-      <div class="container mt-3">
-        <div class="row row-cols-3">
-          <div class="col">
-            <div class="card cardBG">
-              <img
-                src="../images/cp.avif"
-                alt="image of a categories"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <div class="card-title m-0">
-                  <h5>Pc and Mobile Phones</h5>
-                </div>
-              </div>
-              <div class="card-footer">
-                <button class="btn btn-secondary my-3 fs-7">Show Lists</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card cardBG">
-              <img
-                src="../images/cards.webp"
-                alt="image of a categories"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <div class="card-title m-0">
-                  <h5>Trading Cards</h5>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-secondary my-3 fs-7">Show Lists</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card cardBG">
-              <img
-                src="../images/jewelries.webp"
-                alt="image of a categories"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <div class="card-title m-0">
-                  <h5>Luxury Items</h5>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-secondary my-3 fs-7">Show Lists</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row row-cols-2 mt-2">
-          <div class="col">
-            <div class="card cardBG">
-              <img
-                src="../images/house.avif"
-                alt="image of a categories"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <div class="card-title m-0">
-                  <h5>House and Lots</h5>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-secondary my-3 fs-7">Show Lists</button>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card cardBG">
-              <img
-                src="../images/cars.webp"
-                alt="image of a categories"
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <div class="card-title m-0">
-                  <h5>Cars and Motorcycles</h5>
-                </div>
-              </div>
-
-              <div class="card-footer">
-                <button class="btn btn-secondary my-3 fs-7">Show Lists</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-2 mt-2">
-          <button class="btn btn-primary featured">Featured Auction</button>
-          <button class="btn btn-primary ongoing">Ongoing Auction</button>
-          <button class="btn btn-primary upcoming">Upcoming Auction</button>
-        </div>
-        <div class="API-title row row-cols-3"></div>
+      <div class="container">
+        <div class="membersProfileContainer row row-cols-4"></div>
       </div>
 
       <footer class="bg-primary py-4 flex-shrink-0 d-none d-sm-block">
@@ -220,8 +122,8 @@
             </div>
             <div class="col-lg-2 col-md-6">
               <h7>Site Map</h7>
-              <a href="#"><p class="mx-2 fs-8 mb-0">Home</p></a>
-              <a href="listings.html"><p class="mx-2 fs-8 mb-0">Auction</p></a>
+              <a href="homePage.html"><p class="mx-2 fs-8 mb-0">Home</p></a>
+              <a href="#"><p class="mx-2 fs-8 mb-0">Auction</p></a>
               <a href="/index.html"><p class="mx-2 fs-8 mb-0">LogIn</p></a>
               <a href="register.html"><p class="mx-2 fs-8 mb-0">Register</p></a>
               <a href="contactPage.html"

@@ -8,3 +8,5 @@ export * from "./profileTemplate.mjs";
 export * from "./renderView.mjs";
 export * from "./profileListingsTemplate.mjs";
 export * from "./renderProfileListings.mjs";
+export * from "./renderMembersPage.mjs";
+export * from "./renderBids.mjs";

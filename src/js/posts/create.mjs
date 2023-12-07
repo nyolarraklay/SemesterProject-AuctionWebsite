@@ -7,8 +7,9 @@ export async function createPost(title, description, tags, media, endsAt) {
     body: JSON.stringify({ title, description, tags, media, endsAt }),
     headers: headers("application/json"),
   });
-  console.log(response.json);
+
   if (response.ok) {
+    location.reload();
     return await response.json();
   }
 

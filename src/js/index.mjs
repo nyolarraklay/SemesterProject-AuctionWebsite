@@ -1,5 +1,4 @@
 import * as templates from "./template/index.mjs";
-import * as sort from "./template/sortedPosts.mjs";
 import * as userInterface from "./userInterface/index.mjs";
 import {
   clickShowListsButton,
@@ -34,6 +33,7 @@ if (path === "/src/html/details.html") {
     userInterface.deletePostListing();
     userInterface.updateLoginVisibility();
     userInterface.header();
+    userInterface.submitBid();
   }
   authGuard(renderLoggedInView);
 }
@@ -67,7 +67,17 @@ if (path === "/src/html/profilePage.html") {
 if (path === "/src/html/profileListings.html") {
   if (isLoggedIn) {
     templates.renderProfileListingsPage();
+    templates.renderBids();
     userInterface.submitPostListing();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+  }
+  authGuard(renderLoggedInView);
+}
+
+if (path === "/src/html/membersPage.html") {
+  if (isLoggedIn) {
+    templates.renderMembersProfilePage();
     userInterface.updateLoginVisibility();
     userInterface.header();
   }

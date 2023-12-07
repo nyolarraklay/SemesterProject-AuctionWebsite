@@ -4,7 +4,11 @@ import {
   setUpdateProfileListener,
   logoutListener,
 } from "../listener/authenticationListener/index.mjs";
-import { postListener, updatePostListener } from "../listener/posts/index.mjs";
+import {
+  bidListener,
+  postListener,
+  updatePostListener,
+} from "../listener/posts/index.mjs";
 import { load } from "../storage/load.mjs";
 import { deletePost } from "../posts/delete.mjs";
 
@@ -51,4 +55,9 @@ export const submitUpdatePostListing = () => {
 export const deletePostListing = () => {
   const deleteButton = document.querySelector(".deleteButton");
   deleteButton.addEventListener("click", deletePost);
+};
+
+export const submitBid = () => {
+  const register = document.querySelector("form#bidForm");
+  register.addEventListener("submit", bidListener);
 };

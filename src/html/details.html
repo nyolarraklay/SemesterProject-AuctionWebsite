@@ -48,8 +48,8 @@
           <button
             class="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
@@ -109,7 +109,46 @@
       </nav>
 
       <div class="container mt-3">
-        <div class="API-title"></div>
+        <div
+          class="API-title d-flex justify-content-center align-items-center"
+        ></div>
+        <div
+          class="modal fade"
+          id="bidModal"
+          tabindex="-1"
+          aria-labelledby="bidModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="bidModalLabel">
+                  Amount To Bid
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="bidForm" class="p-3 mt-3">
+                  <label for="amount" class="form-label">Amount</label>
+                  <input
+                    type="number"
+                    class="form-control border border-secondary"
+                    id="amount"
+                    name="amount"
+                  />
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">Bid</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <div
           class="modal fade"
           id="staticBackdropEdit"
