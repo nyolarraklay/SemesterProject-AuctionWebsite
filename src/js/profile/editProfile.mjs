@@ -1,5 +1,4 @@
 import * as constant from "../constant/index.mjs";
-import { fetchTokens } from "../authentication/headers.mjs";
 import { headers } from "../authentication/headers.mjs";
 import * as storage from "../storage/index.mjs";
 

@@ -1,6 +1,6 @@
 export function singlePostTemplate(postData) {
   const timeLinePosts = document.createElement("div");
-  timeLinePosts.classList.add("card", "mb-3", "details-card", "col");
+  timeLinePosts.classList.add("card", "mb-3", "details-card", "col", "p-4");
 
   const detailsDIv = document.createElement("div");
   detailsDIv.classList.add("row");
@@ -42,9 +42,9 @@ export function singlePostTemplate(postData) {
 
   const listDetails = document.createElement("div");
   listDetails.classList.add("mt-3");
-
+  const detailsContainer = document.createElement("div");
   const detailsTitle = document.createElement("h5");
-  detailsTitle.innerText = "Item Details";
+  detailsTitle.innerText = "Description";
 
   const postBody = document.createElement("p");
   postBody.classList.add("fs-7");
@@ -126,9 +126,16 @@ export function singlePostTemplate(postData) {
     bidder.append(orderedList);
   });
 
-  detailsTitle.append(postBody, seller, userImageAndName, bidder, bidNow);
+  detailsContainer.append(
+    detailsTitle,
+    postBody,
+    seller,
+    userImageAndName,
+    bidder,
+    bidNow
+  );
 
-  listDetails.append(detailsTitle);
+  listDetails.append(detailsContainer);
   const editButton = document.createElement("button");
   editButton.classList.add("btn", "btn-secondary", "fs-7");
   editButton.setAttribute("data-bs-toggle", "modal");

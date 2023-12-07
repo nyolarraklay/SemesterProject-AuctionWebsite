@@ -12,7 +12,7 @@ export async function getListings(name) {
 }
 
 export async function getAllBids(name) {
-  const getPostURL = `${constant.API_BASE_URL}${constant.allProfiles}/${name}/bids`;
+  const getPostURL = `${constant.API_BASE_URL}${constant.allProfiles}/${name}/bids?_listing=true`;
 
   const response = await fetchTokens(getPostURL);
   const registeredProfile = await response.json();
