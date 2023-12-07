@@ -5,7 +5,6 @@ import {
   sortPostsOldestToNewest,
   sortPostsBiggestBid,
 } from "../sort/index.mjs";
-import { mustLogIn } from "../redirection/index.mjs";
 
 export async function renderSortedPostsTemplateOldtoNew() {
   try {
@@ -18,7 +17,6 @@ export async function renderSortedPostsTemplateOldtoNew() {
       const sortedPostContent = sortedPost.map(postsTemplate);
       container.innerHTML = "";
       container.append(...sortedPostContent);
-      setTimeout(mustLogIn, 100);
     });
   } catch (error) {
     error;
@@ -36,7 +34,6 @@ export async function renderSortedPostsTemplateNewtoOld() {
       const sortedPostContent = sortedPost.map(postsTemplate);
       container.innerHTML = "";
       container.append(...sortedPostContent);
-      setTimeout(mustLogIn, 100);
     });
   } catch (error) {
     error;
@@ -54,7 +51,6 @@ export async function renderSortedPostsTemplateHighestBid() {
       const sortedPostContent = sortedPost.map(postsTemplate);
       container.innerHTML = "";
       container.append(...sortedPostContent);
-      setTimeout(mustLogIn, 100);
     });
   } catch (error) {
     error;

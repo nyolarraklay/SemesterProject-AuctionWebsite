@@ -1,11 +1,6 @@
 import * as templates from "./template/index.mjs";
 import * as userInterface from "./userInterface/index.mjs";
-import {
-  clickShowListsButton,
-  iconClick,
-  mustLogIn,
-  // viewProfile,
-} from "./redirection/index.mjs";
+import { clickShowListsButton, iconClick } from "./redirection/index.mjs";
 
 import { isLoggedIn } from "./authentication/index.mjs";
 
@@ -15,8 +10,6 @@ const path = location.pathname;
 
 clickShowListsButton();
 iconClick();
-
-setTimeout(mustLogIn, 100);
 
 if (path === "/index.html") {
   userInterface.submitDataLogIn();

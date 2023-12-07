@@ -1,4 +1,3 @@
-import { isLoggedIn } from "../authentication/status.mjs";
 import { logoutListener } from "../listener/authenticationListener/index.mjs";
 
 export function header() {
