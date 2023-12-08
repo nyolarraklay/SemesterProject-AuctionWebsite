@@ -1,4 +1,4 @@
-import { logout } from "./logOut.mjs";
+import { logout } from "./logOut.js";
 import { save, remove, load } from "../../storage/index.js";
 
 class LocalStorageMock {

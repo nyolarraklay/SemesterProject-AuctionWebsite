@@ -1,5 +1,14 @@
-import { login } from "./logIn.mjs";
-import { save, remove, load } from "../storage/index.mjs";
+import { login, defaultRedirectCallback } from "./logIn.js";
+import { save, remove, load } from "../storage/index.js";
+
+const mockLocation = {
+  href: "",
+  assign: jest.fn(),
+};
+
+Object.defineProperty(global, "window", {
+  value: { location: mockLocation },
+});
 
 class LocalStorageMock {
   constructor() {
@@ -51,12 +60,13 @@ describe("storage", () => {
   });
 });
 
-const TEST_EMAIL = "test@noroff.no";
+const TEST_EMAIL = "asasas@noroff.no";
 const TEST_PASSWORD = "password";
 const TEST_BAD_EMAIL = "juan@noroff.no";
 
 const TEST_TOKEN = {
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ND",
+  token:
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODg4LCJuYW1lIjoiYXNhc2FzIiwiZW1haWwiOiJhc2FzYUBub3JvZmYubm8iLCJhdmF0YXIiOiJodHRwczovL3NvdXJjZS51bnNwbGFzaC5jb20vcmFuZG9tLzgzIiwiY3JlZGl0cyI6ODAwLCJ3aW5zIjpbXSwiaWF0IjoxNzAyMDM2NjUyfQ.-QdxklhDbNochcnxYOuolw5HhsD9WLvchoCxKtEqpVw",
 };
 
 /**
@@ -97,7 +107,12 @@ function fetchFailure(status = 404, statusText = "Not Found") {
 describe("logIn", () => {
   it("Fetches and stores a token in browser storage when provided with a valid email and password ", async () => {
     global.fetch = jest.fn(() => fetchSuccess(TEST_EMAIL, TEST_PASSWORD));
-    const token = await login(TEST_BAD_EMAIL, TEST_PASSWORD);
+    const token = await login(TEST_EMAIL, TEST_PASSWORD, mockRedirectCallback);
+    expect(mockLocation.href).toBe("/src/html/homePage.html");
     expect(token).toEqual(TEST_TOKEN);
   });
 });
+
+function mockRedirectCallback(url) {
+  mockLocation.href = url;
+}
