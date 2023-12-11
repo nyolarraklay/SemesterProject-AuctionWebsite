@@ -3,7 +3,7 @@ import { headers } from "../authentication/headers.js";
 import { fetchTokens } from "../authentication/headers.js";
 
 export async function getPosts(limit = 30, offset = 0) {
-  const getPostURL = `${API_BASE_URL}${listingsAll}?limit=${limit}&offset=${offset}`;
+  const getPostURL = `${API_BASE_URL}${listingsAll}?limit=${limit}&offset=${offset}&sort=created&sortOrder=asc`;
   const response = await fetchTokens(getPostURL);
   const registeredProfile = await response.json();
   if (response.ok) {

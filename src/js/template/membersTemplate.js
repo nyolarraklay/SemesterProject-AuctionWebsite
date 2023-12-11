@@ -8,8 +8,14 @@ export function membersTemplate(postData) {
     "my-2"
   );
 
-  const card = document.createElement("div");
-  card.classList.add("cardProfile", "mt-2");
+  const card = document.createElement("a");
+  card.classList.add(
+    "cardProfile",
+    "mt-2",
+    "text-decoration-none",
+    "text-dark"
+  );
+  card.href = `/src/html/membersListing.html?id=${postData.name}`;
 
   const profileAvatar = document.createElement("div");
   profileAvatar.classList.add("userProfile", "text-center");

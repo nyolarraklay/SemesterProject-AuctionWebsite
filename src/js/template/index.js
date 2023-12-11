@@ -10,3 +10,4 @@ export * from "./profileListingsTemplate.js";
 export * from "./renderProfileListings.js";
 export * from "./renderMembersPage.js";
 export * from "./renderBids.js";
+export * from "./renderMembersListings.js";

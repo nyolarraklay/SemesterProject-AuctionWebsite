@@ -5,6 +5,7 @@ import { clickShowListsButton, iconClick } from "./redirection/index.js";
 import { isLoggedIn } from "./authentication/index.js";
 
 import { authGuard, renderLoggedInView } from "./authGuard/index.js";
+import { logInAction } from "./constant/index.js";
 
 const path = location.pathname;
 
@@ -73,6 +74,16 @@ if (path === "/src/html/membersPage.html") {
     templates.renderMembersProfilePage();
     userInterface.updateLoginVisibility();
     userInterface.header();
+  }
+  authGuard(renderLoggedInView);
+}
+
+if (path === "/src/html/membersListing.html") {
+  if (isLoggedIn) {
+    templates.renderMembersListings();
+    userInterface.updateLoginVisibility();
+    userInterface.header();
+    templates.renderBids();
   }
   authGuard(renderLoggedInView);
 }
