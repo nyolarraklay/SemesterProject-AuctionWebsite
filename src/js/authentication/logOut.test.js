@@ -1,5 +1,5 @@
 import { logout } from "./logOut.js";
-import { save, remove, load } from "../../storage/index.js";
+import { save, remove, load } from "../storage/index.js";
 
 class LocalStorageMock {
   constructor() {
@@ -38,7 +38,7 @@ describe("storage", () => {
 
 describe("logOut", () => {
   it("Logout function clears the token from browser storage ", async () => {
-    const token = await logout();
+    const token = logout();
     expect(token).toEqual(undefined);
   });
 });

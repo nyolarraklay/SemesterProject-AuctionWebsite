@@ -62,7 +62,6 @@ describe("storage", () => {
 
 const TEST_EMAIL = "asasas@noroff.no";
 const TEST_PASSWORD = "password";
-const TEST_BAD_EMAIL = "juan@noroff.no";
 
 const TEST_TOKEN = {
   token:
@@ -84,23 +83,6 @@ function fetchSuccess(email = TEST_EMAIL, password = TEST_PASSWORD) {
     status: 200,
     statusText: "OK",
     json: () => Promise.resolve(TEST_TOKEN),
-  });
-}
-
-/**
- * A mock fetch that fetches unsuccessfully
- * @param {number} status The status code to return
- * @param {string} stausTest The status text to return
- * @returns {Promise<object>} A promise that resolves to the login details
- *@example
- * global.fetch = jest.fn(() => fetchFailure(404, "Not found"))
- */
-
-function fetchFailure(status = 404, statusText = "Not Found") {
-  return Promise.resolve({
-    ok: false,
-    status,
-    statusText,
   });
 }
 

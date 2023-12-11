@@ -55,7 +55,7 @@ export function profileTemplate(postData) {
   statsWins.classList.add("mb-0");
   statsWins.innerText = "Wins";
   const winsData = document.createElement("span");
-  winsData.innerText = 0 + postData.wins;
+  winsData.innerText = 0 + postData.wins.length;
 
   wins.append(statsWins, winsData);
 

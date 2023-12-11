@@ -23,8 +23,9 @@ export async function login(
     redirectCallback("/src/html/homePage.html");
     return profile;
   }
-
-  throw new Error(response.statusText);
+  const responseBody = await response.text();
+  alert(`Error: ${response.statusText}\n${responseBody}`);
+  throw new Error("User not registered");
 }
 
 export function defaultRedirectCallback(url) {
