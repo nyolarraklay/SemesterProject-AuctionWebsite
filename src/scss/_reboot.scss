@@ -1,0 +1,4 @@
+h7 {
+  @extend %heading;
+  @include font-size($h7-font-size);
+}
