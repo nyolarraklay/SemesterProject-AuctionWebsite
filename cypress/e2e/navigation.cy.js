@@ -201,7 +201,7 @@ describe("Auction Website: Authorized user", () => {
     cy.url().should("include", "src/html/membersListing.html");
     cy.get(
       '[href="/src/html/details.html?id=6e1a5d42-abc2-45ec-a929-7cd0fbd05422"] > .card-body > .card-img-bottom'
-    ).click();
+    ).click({ force: true });
     cy.wait(1000);
     cy.url().should("include", "src/html/details.html");
     cy.get(".mt-3 > :nth-child(1) > .btn").click();
