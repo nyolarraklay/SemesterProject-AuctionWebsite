@@ -101,7 +101,7 @@ export function singlePostTemplate(postData) {
   bidder.innerText = "Bids";
 
   const bidNow = document.createElement("button");
-  bidNow.classList.add("btn", "btn-secondary", "fs-7", "ms-5");
+  bidNow.classList.add("btn", "btn-secondary", "fs-7", "ms-5", "bidNow");
   bidNow.innerText = "Bid Now";
   bidNow.setAttribute("data-bs-toggle", "modal");
   bidNow.setAttribute("data-bs-target", "#bidModal");
