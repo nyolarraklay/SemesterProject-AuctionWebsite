@@ -18,18 +18,21 @@ describe("Auction Website: Unauthorized user", () => {
   it("should navigate to the home page", () => {
     cy.visit("/src/html/register.html");
     cy.get(".navbar-nav > :nth-child(1)").click();
+    cy.wait(1000);
     cy.url().should("include", "/src/html/homePage.html");
   });
 
   it("should navigate to the listings page", () => {
     cy.visit("/src/html/homePage.html");
     cy.get(":nth-child(2) > .nav-link").click();
+    cy.wait(1000);
     cy.url().should("include", "/src/html/listings.html");
   });
 
   it("should navigate to the contact page", () => {
     cy.visit("/src/html/listings.html");
     cy.get(".navbar-nav > :nth-child(5)").click();
+    cy.wait(1000);
     cy.url().should("include", "/src/html/contactPage.html");
   });
 
@@ -70,12 +73,14 @@ describe("Auction Website: Authorized user", () => {
   it("should submit the log in form and access profile page", () => {
     cy.visit("/index.html");
     cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.wait(1000);
     cy.url().should("include", "/");
 
     cy.get("#email").type("asasa@noroff.no");
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
@@ -94,16 +99,23 @@ describe("Auction Website: Authorized user", () => {
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
     });
     cy.get(".dropdown > .btn").click();
+    cy.wait(1000);
     cy.get(".dropdown-menu > :nth-child(1) > .fs-7").click();
+    cy.wait(1000);
     cy.url().should("include", "src/html/profilePage.html");
+    cy.wait(1000);
     cy.get(".profileDetails > .editButton").click();
+    cy.wait(1000);
     cy.get("#avatar").type("https://source.unsplash.com/random/60");
+    cy.wait(1000);
     cy.get("#updateRegisterForm").submit();
+    cy.wait(1000);
     cy.url().should("include", "src/html/profilePage.html");
   });
 
@@ -116,6 +128,7 @@ describe("Auction Website: Authorized user", () => {
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
@@ -131,6 +144,7 @@ describe("Auction Website: Authorized user", () => {
     cy.get("#postMedia").type("https://source.unsplash.com/random/63");
     cy.get("#postEnds").click();
     cy.get("#newPost").submit();
+    cy.wait(1000);
     cy.url().should("include", "src/html/profileListings.html");
   });
 
@@ -143,6 +157,7 @@ describe("Auction Website: Authorized user", () => {
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
@@ -153,18 +168,21 @@ describe("Auction Website: Authorized user", () => {
     cy.get(
       '[href="/src/html/details.html?id=e86df5fb-9984-4475-ba30-2a14fdd043e7"] > .card-body > .card-img-bottom'
     ).click();
+    cy.wait(1000);
     cy.url().should("include", "src/html/details.html");
   });
 
   it("should may add a bid to another user's listing", () => {
     cy.visit("/src/html/register.html");
     cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.wait(1000);
     cy.url().should("include", "/");
 
     cy.get("#email").type("asasa@noroff.no");
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
@@ -179,17 +197,20 @@ describe("Auction Website: Authorized user", () => {
     cy.get(".mt-3 > :nth-child(1) > .btn").click();
     cy.get("#amount").type("10");
     cy.get("#bidForm").submit();
+    cy.wait(1000);
   });
 
   it("should successfully logout the website", () => {
     cy.visit("/src/html/register.html");
     cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.wait(1000);
     cy.url().should("include", "/");
 
     cy.get("#email").type("asasa@noroff.no");
     cy.get("#password").type("password");
 
     cy.get("#loginForm").submit();
+    cy.wait(1000);
 
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
@@ -198,6 +219,7 @@ describe("Auction Website: Authorized user", () => {
     cy.get(".dropdown-menu > :nth-child(1) > .fs-7").click();
     cy.url().should("include", "src/html/profilePage.html");
     cy.get("#logButton").click();
+    cy.wait(1000);
     cy.url().should("include", "/index.html");
   });
 
