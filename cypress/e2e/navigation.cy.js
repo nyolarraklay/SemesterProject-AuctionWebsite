@@ -51,9 +51,9 @@ describe("Auction Website: Unauthorized user", () => {
     cy.visit("/");
 
     cy.get("#email")
-      .type("fake@stud.noroff.no", { force: true, delay: 100 })
+      .type("fake@stud.noroff.no")
       .should("have.value", "fake@stud.noroff.no");
-    cy.get("#password").type("fakepassword", { force: true, delay: 100 });
+    cy.get("#password").type("fakepassword");
 
     cy.get("#loginForm").trigger("submit");
     cy.on("window:alert", (t) => {
