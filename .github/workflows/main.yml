@@ -35,7 +35,7 @@ jobs:
       - name: Build SASS
         run: npm run build
       - name: Update Permissions-Policy Header
-        run: echo "Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" >  _site/.nojekyll
+        run: echo "Permissions-Policy:your-other-directives-here" > _site/.nojekyll
      
       - name: Setup Pages
         uses: actions/configure-pages@v2
