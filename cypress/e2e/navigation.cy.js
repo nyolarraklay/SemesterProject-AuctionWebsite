@@ -16,19 +16,19 @@ describe("Auction Website: Unauthorized user", () => {
   });
 
   it("should navigate to the home page", () => {
-    cy.visit("/");
+    cy.visit("/src/html/register.html");
     cy.get(".navbar-nav > :nth-child(1)").click();
     cy.url().should("include", "/src/html/homePage.html");
   });
 
   it("should navigate to the listings page", () => {
-    cy.visit("/");
+    cy.visit("/src/html/homePage.html");
     cy.get(":nth-child(2) > .nav-link").click();
     cy.url().should("include", "/src/html/listings.html");
   });
 
   it("should navigate to the contact page", () => {
-    cy.visit("/");
+    cy.visit("/src/html/listings.html");
     cy.get(".navbar-nav > :nth-child(5)").click();
     cy.url().should("include", "/src/html/contactPage.html");
   });
@@ -68,7 +68,7 @@ describe("Auction Website: Unauthorized user", () => {
 
 describe("Auction Website: Authorized user", () => {
   it("should submit the log in form and access profile page", () => {
-    cy.visit("/src/html/register.html");
+    cy.visit("/index.html");
     cy.get(".navbar-nav > :nth-child(3)").click();
     cy.url().should("include", "/");
 
@@ -82,7 +82,7 @@ describe("Auction Website: Authorized user", () => {
     });
     cy.get(".dropdown > .btn").click();
     cy.get(".dropdown-menu > :nth-child(1) > .fs-7").click();
-    cy.url().should("include", "src/html/profilePage.html");
+    cy.url().should("contains", "src/html/profilePage.html");
   });
 
   it("should update the user's avatar", () => {

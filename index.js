@@ -5,7 +5,6 @@ import { clickShowListsButton, iconClick } from "./src/js/redirection/index.js";
 import { isLoggedIn } from "./src/js/authentication/index.js";
 
 import { authGuard, renderLoggedInView } from "./src/js/authGuard/index.js";
-import { logInAction } from "./src/js/constant/index.js";
 
 const path = location.pathname;
 
