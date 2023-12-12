@@ -1,3 +1,5 @@
+import { updateCountdown } from "../tools/clear.js";
+
 export function postsTemplate(postData) {
   const timeLinePosts = document.createElement("div");
   timeLinePosts.classList.add("card", "mb-3", "col", "cardBG");
@@ -26,8 +28,9 @@ export function postsTemplate(postData) {
   date.innerText = `created ${postData.created}`;
 
   const endDate = document.createElement("p");
-  endDate.classList.add("fs-8", "m-0", "text-body-secondary");
-  endDate.innerText = `Bidding ends at ${postData.endsAt}`;
+  endDate.classList.add("fs-8", "m-0", "text-body-secondary", "fw-bold");
+  const endsAt = postData.endsAt;
+  updateCountdown(endsAt, endDate);
 
   const dateContent = document.createElement("div");
   dateContent.append(date, endDate);

@@ -1,3 +1,5 @@
+import { updateCountdown } from "../tools/clear.js";
+
 export function singlePostTemplate(postData) {
   const timeLinePosts = document.createElement("div");
   timeLinePosts.classList.add("card", "mb-3", "details-card", "col", "p-4");
@@ -31,10 +33,16 @@ export function singlePostTemplate(postData) {
   postUpdated.classList.add("card-text");
   postUpdated.innerText = `Updated ${postData.updated}`;
 
-  const postEnded = document.createElement("p");
-  postEnded.classList.add("fs-6");
-  postEnded.classList.add("card-text");
-  postEnded.innerText = `Bidding ends at ${postData.endsAt}`;
+  const endDate = document.createElement("p");
+  endDate.classList.add(
+    "fs-6",
+    "m-0",
+    "text-body-secondary",
+    "fw-bold",
+    "card-text"
+  );
+  const endsAt = postData.endsAt;
+  updateCountdown(endsAt, endDate);
 
   const bids = document.createElement("h7");
   bids.classList.add("m-0");
@@ -152,7 +160,7 @@ export function singlePostTemplate(postData) {
     imageContainer.append(img);
 
     detailsDIv2.append(cardBody);
-    cardBody.append(postTitle, postCreated, postEnded, bids);
+    cardBody.append(postTitle, postCreated, endDate, bids);
 
     detailsDIv.append(imageContainer, detailsDIv2, editButton);
     timeLinePosts.append(detailsDIv, listDetails);
