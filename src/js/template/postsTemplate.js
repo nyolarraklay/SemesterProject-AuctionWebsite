@@ -47,6 +47,7 @@ export function postsTemplate(postData) {
   const cardTop = document.createElement("div");
   cardTop.classList.add("d-flex", "justify-content-between");
   const imageContainer = document.createElement("a");
+  imageContainer.classList.add("detailsLink");
   imageContainer.href = `/src/html/details.html?id=${postData.id}`;
 
   if (postData.media !== undefined) {
