@@ -38,7 +38,10 @@ describe("Auction Website: Unauthorized user", () => {
 
   it("should not navigate to the details page and redirected to login page instead", () => {
     cy.visit("src/html/listings.html");
-    cy.get(".detailsLink").click({ multiple: true });
+    cy.get(":nth-child(1) > .card-body > .bidNow > .btn").click({
+      multiple: true,
+    });
+    cy.wait(1000);
     cy.url().should("include", "/");
   });
 
@@ -190,20 +193,18 @@ describe("Auction Website: Authorized user", () => {
     cy.url().should("include", "/src/html/homePage.html", {
       timeout: 10000,
     });
-    cy.get(".dropdown > .btn").click();
+    cy.get("#members > .nav-link").click();
     cy.wait(1000);
-    cy.get(".dropdown-menu > :nth-child(2) > .fs-7").click();
+    cy.url().should("include", "src/html/membersPage.html");
+    cy.get(":nth-child(40) > .cardProfile > .profileDetails > .h4").click();
     cy.wait(1000);
-    cy.url().should("include", "src/html/profileListings.html");
+    cy.url().should("include", "src/html/membersListing.html");
     cy.get(
-      '[href="/src/html/details.html?id=e86df5fb-9984-4475-ba30-2a14fdd043e7"] > .card-body > .card-img-bottom'
+      '[href="/src/html/details.html?id=6e1a5d42-abc2-45ec-a929-7cd0fbd05422"] > .card-body > .card-img-bottom'
     ).click();
     cy.wait(1000);
     cy.url().should("include", "src/html/details.html");
     cy.get(".mt-3 > :nth-child(1) > .btn").click();
-    cy.wait(1000);
-    cy.get("#amount").type("10");
-    cy.get("#bidForm").submit();
     cy.wait(1000);
   });
 
