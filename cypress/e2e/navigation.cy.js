@@ -17,7 +17,7 @@ describe("Auction Website: Unauthorized user", () => {
 
   it("should navigate to the home page", () => {
     cy.visit("/src/html/register.html");
-    cy.get("#homPage").click();
+    cy.get("#homePage").click();
     cy.wait(1000);
     cy.url().should("include", "/src/html/homePage.html");
   });
@@ -31,7 +31,7 @@ describe("Auction Website: Unauthorized user", () => {
 
   it("should navigate to the contact page", () => {
     cy.visit("/src/html/listings.html");
-    cy.get(".navbar-nav > :nth-child(5)").click();
+    cy.get(".API-title .card .card-body a .card-img-bottom").click();
     cy.wait(1000);
     cy.url().should("include", "/src/html/contactPage.html");
   });
@@ -90,7 +90,7 @@ describe("Auction Website: Authorized user", () => {
 
   it("should update the user's avatar", () => {
     cy.visit("/src/html/register.html");
-    cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.get("#logInPage").click();
     cy.wait(1000);
     cy.url().should("include", "/");
 
