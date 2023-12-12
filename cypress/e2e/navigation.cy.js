@@ -31,14 +31,14 @@ describe("Auction Website: Unauthorized user", () => {
 
   it("should navigate to the contact page", () => {
     cy.visit("/src/html/listings.html");
-    cy.get(".API-title .card .card-body a .card-img-bottom").click();
+    cy.get("#contactPage").click();
     cy.wait(1000);
     cy.url().should("include", "/src/html/contactPage.html");
   });
 
   it("should not navigate to the details page and redirected to login page instead", () => {
     cy.visit("src/html/listings.html");
-    cy.get("#contactPage").click();
+    cy.get(".API-title > .card >.card-body >a >.card-img-bottom").click();
     cy.url().should("include", "/");
   });
 
@@ -120,7 +120,7 @@ describe("Auction Website: Authorized user", () => {
 
   it("should create a new Listing", () => {
     cy.visit("/src/html/register.html");
-    cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.get("#logInPage").click();
     cy.wait(1000);
     cy.url().should("include", "/");
 
@@ -150,7 +150,7 @@ describe("Auction Website: Authorized user", () => {
 
   it("should may view bids on a Listing", () => {
     cy.visit("/src/html/register.html");
-    cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.get("#logInPage").click();
     cy.wait(1000);
     cy.url().should("include", "/");
 
@@ -175,7 +175,7 @@ describe("Auction Website: Authorized user", () => {
 
   it("should may add a bid to another user's listing", () => {
     cy.visit("/src/html/register.html");
-    cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.get("#logInPage").click();
     cy.wait(1000);
     cy.url().should("include", "/");
 
@@ -203,7 +203,7 @@ describe("Auction Website: Authorized user", () => {
 
   it("should successfully logout the website", () => {
     cy.visit("/src/html/register.html");
-    cy.get(".navbar-nav > :nth-child(3)").click();
+    cy.get("#logInPage").click();
     cy.wait(1000);
     cy.url().should("include", "/");
 
