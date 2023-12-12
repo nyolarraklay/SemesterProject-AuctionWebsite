@@ -38,7 +38,7 @@ describe("Auction Website: Unauthorized user", () => {
 
   it("should not navigate to the details page and redirected to login page instead", () => {
     cy.visit("src/html/listings.html");
-    cy.get(".detailsLink").click();
+    cy.get(".detailsLink").click({ multiple: true });
     cy.url().should("include", "/");
   });
 
@@ -198,6 +198,7 @@ describe("Auction Website: Authorized user", () => {
     cy.get(
       '[href="/src/html/details.html?id=e86df5fb-9984-4475-ba30-2a14fdd043e7"] > .card-body > .card-img-bottom'
     ).click();
+    cy.wait(1000);
     cy.url().should("include", "src/html/details.html");
     cy.get(".mt-3 > :nth-child(1) > .btn").click();
     cy.wait(1000);
