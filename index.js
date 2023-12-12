@@ -1,11 +1,11 @@
-import * as templates from "./template/index.js";
-import * as userInterface from "./userInterface/index.js";
-import { clickShowListsButton, iconClick } from "./redirection/index.js";
+import * as templates from "./src/js/template/index.js";
+import * as userInterface from "./src/js/userInterface/index.js";
+import { clickShowListsButton, iconClick } from "./src/js/redirection/index.js";
 
-import { isLoggedIn } from "./authentication/index.js";
+import { isLoggedIn } from "./src/js/authentication/index.js";
 
-import { authGuard, renderLoggedInView } from "./authGuard/index.js";
-import { logInAction } from "./constant/index.js";
+import { authGuard, renderLoggedInView } from "./src/js/authGuard/index.js";
+import { logInAction } from "./src/js/constant/index.js";
 
 const path = location.pathname;
 
