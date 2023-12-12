@@ -34,6 +34,8 @@ jobs:
         run: npm i
       - name: Build SASS
         run: npm run build
+      - name: Create _site directory
+        run: mkdir _site
       - name: Update Permissions-Policy Header
         run: echo "Permissions-Policy:your-other-directives-here" > _site/.nojekyll
      
