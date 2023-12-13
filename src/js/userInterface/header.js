@@ -23,13 +23,13 @@ export function header() {
     dropdownList.classList.add("dropdown-menu");
     const list1 = document.createElement("li");
     const profileLink = document.createElement("a");
-    profileLink.href = "/src/html/profilePage.html";
+    profileLink.href = "../html/profilePage.html";
     profileLink.innerText = "My Profile";
     profileLink.classList.add("fs-7", "text-decoration-none", "text-dark");
     list1.append(profileLink);
     const list2 = document.createElement("li");
     const listingsLink = document.createElement("a");
-    listingsLink.href = "/src/html/profileListings.html";
+    listingsLink.href = "../html/profileListings.html";
     listingsLink.innerText = "My Listing";
     listingsLink.classList.add("fs-7", "text-decoration-none", "text-dark");
     list2.append(listingsLink);
@@ -42,7 +42,7 @@ export function header() {
     const membersPage = document.querySelector("#members");
     membersPage.innerHTML = "";
     const membersLink = document.createElement("a");
-    membersLink.href = "/src/html/membersPage.html";
+    membersLink.href = "../html/membersPage.html";
     membersLink.classList.add("nav-link");
     membersLink.innerText = "MEMBERS";
     membersPage.append(membersLink);
