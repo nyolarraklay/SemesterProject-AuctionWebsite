@@ -1,5 +1,6 @@
 import * as constant from "../constant/index.js";
 import { headers } from "./headers.js";
+import { isLoggedIn } from "./status.js";
 
 const method = "post";
 
@@ -16,6 +17,8 @@ export async function registerToAPI(name, email, password, avatar) {
   });
 
   if (response.ok) {
+    isLoggedIn();
+    location.href = "../../../index.html";
     return await response.json();
   }
 

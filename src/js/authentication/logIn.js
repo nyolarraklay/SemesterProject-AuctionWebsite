@@ -20,7 +20,8 @@ export async function login(
     delete profile.accessToken;
     save("profile", profile);
     isLoggedIn();
-    redirectCallback("/src/html/homePage.html");
+    const pathToHomePage = "../../../src/html/homePage.html";
+    redirectCallback(pathToHomePage);
     return profile;
   }
   const responseBody = await response.text();
