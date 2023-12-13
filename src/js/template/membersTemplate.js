@@ -15,7 +15,7 @@ export function membersTemplate(postData) {
     "text-decoration-none",
     "text-dark"
   );
-  card.href = `/src/html/membersListing.html?id=${postData.name}`;
+  card.href = `../html/membersListing.html?id=${postData.name}`;
 
   const profileAvatar = document.createElement("div");
   profileAvatar.classList.add("userProfile", "text-center");
