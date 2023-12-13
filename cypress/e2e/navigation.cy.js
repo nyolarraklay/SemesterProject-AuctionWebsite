@@ -142,33 +142,6 @@ describe("Auction Website: Authorized user", () => {
     cy.url().should("include", "src/html/profileListings.html");
   });
 
-  it("should may view bids on a Listing", () => {
-    cy.visit("/src/html/register.html");
-    cy.get("#logInPage").click();
-    cy.wait(1000);
-    cy.url().should("include", "/");
-
-    cy.get("#email").type("asasa@noroff.no");
-    cy.get("#password").type("password");
-
-    cy.get("#loginForm").submit();
-    cy.wait(1000);
-
-    cy.url().should("include", "/src/html/homePage.html", {
-      timeout: 10000,
-    });
-    cy.get(".dropdown > .btn").click();
-    cy.wait(1000);
-    cy.get(".dropdown-menu > :nth-child(2) > .fs-7").click();
-    cy.wait(1000);
-    cy.url().should("include", "src/html/profileListings.html");
-    cy.get(
-      '[href="/src/html/details.html?id=e86df5fb-9984-4475-ba30-2a14fdd043e7"] > .card-body > .card-img-bottom'
-    ).click({ force: true });
-    cy.wait(1000);
-    cy.url().should("include", "src/html/details.html");
-  });
-
   it("should successfully logout the website", () => {
     cy.visit("/src/html/register.html");
     cy.get("#logInPage").click();

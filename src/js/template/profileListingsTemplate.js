@@ -3,7 +3,7 @@ import { updateCountdown } from "../tools/clear.js";
 export function profileListingsTemplate(postData) {
   const timeLinePosts = document.createElement("a");
   timeLinePosts.classList.add("card", "mb-3", "col", "cardBG");
-  timeLinePosts.href = `/src/html/details.html?id=${postData.id}`;
+  timeLinePosts.href = `../html/details.html?id=${postData.id}`;
 
   const cardBody = document.createElement("div");
   cardBody.classList.add("card-body");

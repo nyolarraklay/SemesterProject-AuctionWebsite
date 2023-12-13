@@ -48,7 +48,7 @@ export function postsTemplate(postData) {
   bids.innerText = `Bids ${postData._count.bids}`;
   const bidNow = document.createElement("a");
   bidNow.classList.add("btn", "btn-secondary", "my-3", "fs-7");
-  bidNow.href = `/src/html/details.html?id=${postData.id}`;
+  bidNow.href = `../html/details.html?id=${postData.id}`;
   bidNow.innerText = "Details";
   const bidContent = document.createElement("div");
   bidContent.classList.add("bidNow");
