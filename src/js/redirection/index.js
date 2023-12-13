@@ -10,6 +10,6 @@ export function clickShowListsButton() {
 export function iconClick() {
   const iconLink = document.querySelector(".navbar-brand");
   iconLink.addEventListener("click", function () {
-    document.location.href = "/src/html/homePage.html";
+    document.location.href = "./src/html/homePage.html";
   });
 }
