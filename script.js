@@ -6,21 +6,20 @@ import { isLoggedIn } from "./src/js/authentication/index.js";
 
 import { authGuard, renderLoggedInView } from "./src/js/authGuard/index.js";
 
-const baseUrl = "/SemesterProject-AuctionWebsite";
 const path = location.pathname;
 
 clickShowListsButton();
 iconClick();
 
-if (path === "/index.html") {
+if (path.includes("/index.html")) {
   userInterface.submitDataLogIn();
 }
 
-if (path === "/src/html/register.html") {
+if (path.includes("/src/html/register.html")) {
   userInterface.submitDataRegister();
 }
 
-if (path === "/src/html/details.html") {
+if (path.includes("/src/html/details.html")) {
   if (isLoggedIn) {
     templates.renderPostTemplate();
     userInterface.submitUpdatePostListing();
@@ -32,7 +31,7 @@ if (path === "/src/html/details.html") {
   authGuard(renderLoggedInView);
 }
 
-if (path === "/src/html/listings.html") {
+if (path.includes("/src/html/listings.html")) {
   if (isLoggedIn) {
     templates.renderView();
     userInterface.updateLoginVisibility();
@@ -40,7 +39,7 @@ if (path === "/src/html/listings.html") {
   }
 }
 
-if (path === `${baseUrl}/src/html/homePage.html`) {
+if (path.includes("/src/html/homePage.html")) {
   if (isLoggedIn) {
     templates.renderView();
     userInterface.updateLoginVisibility();
@@ -48,7 +47,7 @@ if (path === `${baseUrl}/src/html/homePage.html`) {
   }
 }
 
-if (path === "/src/html/profilePage.html") {
+if (path.includes("/src/html/profilePage.html")) {
   if (isLoggedIn) {
     templates.renderProfilePage();
     userInterface.submitUpdateDataRegister();
@@ -58,7 +57,7 @@ if (path === "/src/html/profilePage.html") {
   authGuard(renderLoggedInView);
 }
 
-if (path === "/src/html/profileListings.html") {
+if (path.includes("/src/html/profileListings.html")) {
   if (isLoggedIn) {
     templates.renderProfileListingsPage();
     templates.renderBids();
@@ -69,7 +68,7 @@ if (path === "/src/html/profileListings.html") {
   authGuard(renderLoggedInView);
 }
 
-if (path === "/src/html/membersPage.html") {
+if (path.includes("/src/html/membersPage.html")) {
   if (isLoggedIn) {
     templates.renderMembersProfilePage();
     userInterface.updateLoginVisibility();
@@ -78,7 +77,7 @@ if (path === "/src/html/membersPage.html") {
   authGuard(renderLoggedInView);
 }
 
-if (path === "/src/html/membersListing.html") {
+if (path.includes("/src/html/membersListing.html")) {
   if (isLoggedIn) {
     templates.renderMembersListings();
     userInterface.updateLoginVisibility();
