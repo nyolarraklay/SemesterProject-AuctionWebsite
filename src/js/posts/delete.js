@@ -10,7 +10,7 @@ export async function deletePost() {
     headers: headers(),
   });
   if (response.ok) {
-    location.href = "/src/html/profileListings.html";
+    location.href = "../html/profileListings.html";
     return await response.json();
   }
   const responseBody = await response.text();
