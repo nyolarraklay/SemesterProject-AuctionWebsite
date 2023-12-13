@@ -1,8 +1,8 @@
 export function clickShowListsButton() {
-  const showListButton = document.querySelectorAll(".card-footer button");
+  const showListButton = document.querySelectorAll(".showLists");
   showListButton.forEach((redirect) => {
     redirect.addEventListener("click", function () {
-      document.location.href = "/src/html/listings.html";
+      document.location.href = "../html/listings.html";
     });
   });
 }

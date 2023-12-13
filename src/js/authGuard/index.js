@@ -5,7 +5,7 @@ export const authGuard = (callback) => {
     callback();
   } else {
     console.log("User is not logged in. Redirecting to login page.");
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
   }
 };
 
