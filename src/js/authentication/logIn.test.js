@@ -90,7 +90,7 @@ describe("logIn", () => {
   it("Fetches and stores a token in browser storage when provided with a valid email and password ", async () => {
     global.fetch = jest.fn(() => fetchSuccess(TEST_EMAIL, TEST_PASSWORD));
     const token = await login(TEST_EMAIL, TEST_PASSWORD, mockRedirectCallback);
-    expect(mockLocation.href).toBe("../../../src/html/homePage.html");
+    expect(mockLocation.href).toBe("./src/html/homePage.html");
     expect(token).toEqual(TEST_TOKEN);
   });
 });
