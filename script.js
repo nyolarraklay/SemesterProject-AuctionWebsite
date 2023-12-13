@@ -6,6 +6,7 @@ import { isLoggedIn } from "./src/js/authentication/index.js";
 
 import { authGuard, renderLoggedInView } from "./src/js/authGuard/index.js";
 
+const baseUrl = "/SemesterProject-AuctionWebsite";
 const path = location.pathname;
 
 clickShowListsButton();
@@ -39,7 +40,7 @@ if (path === "/src/html/listings.html") {
   }
 }
 
-if (path === "/src/html/homePage.html" || path === "/src/html/homePage") {
+if (path === `${baseUrl}/src/html/homePage.html`) {
   if (isLoggedIn) {
     templates.renderView();
     userInterface.updateLoginVisibility();
