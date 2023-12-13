@@ -39,7 +39,7 @@ if (path === "/src/html/listings.html") {
   }
 }
 
-if (path === "/src/html/homePage.html") {
+if (path === "/src/html/homePage.html" || path === "/src/html/homePage") {
   if (isLoggedIn) {
     templates.renderView();
     userInterface.updateLoginVisibility();
