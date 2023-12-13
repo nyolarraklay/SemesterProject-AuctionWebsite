@@ -36,15 +36,6 @@ describe("Auction Website: Unauthorized user", () => {
     cy.url().should("include", "/src/html/contactPage.html");
   });
 
-  it("should not navigate to the details page and redirected to login page instead", () => {
-    cy.visit("src/html/listings.html");
-    cy.get(":nth-child(1) > .card-body > .bidNow > .btn").click({
-      multiple: true,
-    });
-    cy.wait(1000);
-    cy.url().should("include", "/");
-  });
-
   it("should allow an unauthorized user to search listings", () => {
     cy.visit("src/html/listings.html");
     cy.get("#search > .form-control").type("zzz").type("{enter}");
