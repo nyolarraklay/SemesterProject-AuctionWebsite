@@ -10,7 +10,7 @@ export async function setUpdateProfileListener(event) {
   try {
     const result = await updateProfile(avatar);
     if (result) {
-      location.href = "/src/html/profilePage.html";
+      location.href = "../html/profilePage.html";
       const oldProfile = load("profile");
       oldProfile.avatar = avatar;
       save("profile", oldProfile);
