@@ -1,15 +1,18 @@
 import { updateCountdown } from "../tools/clear.js";
 
 export function postsTemplate(postData) {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("col-md-4", "cardBG");
   const timeLinePosts = document.createElement("div");
-  timeLinePosts.classList.add("card", "mb-3", "col", "cardBG");
+  timeLinePosts.classList.add("card");
 
   const cardBody = document.createElement("div");
   cardBody.classList.add(
     "card-body",
     "d-flex",
     "flex-column",
-    "justify-content-between"
+    "justify-content-start",
+    "align-items-center"
   );
 
   const post = document.createElement("h5");
@@ -24,11 +27,17 @@ export function postsTemplate(postData) {
   postContent.append(post, postBody);
 
   const date = document.createElement("p");
-  date.classList.add("fs-8", "m-0", "text-body-secondary");
+  date.classList.add("fs-7", "m-0", "text-body-secondary");
   date.innerText = `created ${postData.created}`;
 
   const endDate = document.createElement("p");
-  endDate.classList.add("fs-8", "m-0", "text-body-secondary", "fw-bold");
+  endDate.classList.add(
+    "fs-7",
+    "m-0",
+    "text-body-secondary",
+    "fw-bold",
+    "text-bg-warning"
+  );
   const endsAt = postData.endsAt;
   updateCountdown(endsAt, endDate);
 
@@ -58,6 +67,7 @@ export function postsTemplate(postData) {
     imageContainer.append(img);
     cardBody.append(imageContainer, postContent, dateContent, bids, bidContent);
     timeLinePosts.append(cardBody);
-    return timeLinePosts;
+    cardContainer.append(timeLinePosts);
+    return cardContainer;
   }
 }
