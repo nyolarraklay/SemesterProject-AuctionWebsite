@@ -3,7 +3,7 @@
   "version": "0.0.13",
   "description": "auction website",
   "type": "module",
-  "main": "src/index.js",
+  "main": "/scripts.js",
   "scripts": {
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
