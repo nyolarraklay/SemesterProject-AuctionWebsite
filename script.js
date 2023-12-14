@@ -1,10 +1,9 @@
 import * as templates from "./src/js/template/index.js";
 import * as userInterface from "./src/js/userInterface/index.js";
 import { clickShowListsButton, iconClick } from "./src/js/redirection/index.js";
-
 import { isLoggedIn } from "./src/js/authentication/index.js";
-
 import { authGuard, renderLoggedInView } from "./src/js/authGuard/index.js";
+import * as pagination from "./src/js/pagination/members/membersPagination.js";
 
 const path = location.pathname;
 
@@ -73,6 +72,12 @@ if (path.includes("/src/html/membersPage.html")) {
     templates.renderMembersProfilePage();
     userInterface.updateLoginVisibility();
     userInterface.header();
+
+    pagination.paginationPage1();
+    pagination.paginationPage2();
+    pagination.paginationPage3();
+    pagination.paginationPage4();
+    pagination.paginationPage5();
   }
   authGuard(renderLoggedInView);
 }
