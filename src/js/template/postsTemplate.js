@@ -12,7 +12,7 @@ export function postsTemplate(postData) {
     "d-flex",
     "flex-column",
     "justify-content-start",
-    "align-items-center"
+    "align-items-center",
   );
 
   const post = document.createElement("h5");
@@ -36,7 +36,7 @@ export function postsTemplate(postData) {
     "m-0",
     "text-body-secondary",
     "fw-bold",
-    "text-bg-warning"
+    "text-bg-warning",
   );
   const endsAt = postData.endsAt;
   updateCountdown(endsAt, endDate);

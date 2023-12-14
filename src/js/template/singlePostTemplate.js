@@ -39,7 +39,7 @@ export function singlePostTemplate(postData) {
     "m-0",
     "text-body-secondary",
     "fw-bold",
-    "card-text"
+    "card-text",
   );
   const endsAt = postData.endsAt;
   updateCountdown(endsAt, endDate);
@@ -140,7 +140,7 @@ export function singlePostTemplate(postData) {
     seller,
     userImageAndName,
     bidder,
-    bidNow
+    bidNow,
   );
 
   listDetails.append(detailsContainer);

@@ -23,7 +23,7 @@ function fetchFailure(status = 404, statusText = "Not Found") {
 }
 
 describe("logIn(unregistered-user)", () => {
-  test("prevent unregistered user to log-in when provided with an invalid email and password ", async () => {
+  test("prevent unregistered user to log-in when provided with an invalid email and password", async () => {
     global.fetch = jest.fn(() => fetchFailure(TEST_BAD_EMAIL, TEST_PASSWORD));
 
     const originalAlert = global.alert;
