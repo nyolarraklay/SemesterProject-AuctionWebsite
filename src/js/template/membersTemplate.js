@@ -6,6 +6,7 @@ export function membersTemplate(postData) {
     "justify-content-evenly",
     "align-items-center",
     "my-2",
+    "col-md-4"
   );
 
   const card = document.createElement("a");
@@ -13,7 +14,7 @@ export function membersTemplate(postData) {
     "cardProfile",
     "mt-2",
     "text-decoration-none",
-    "text-dark",
+    "text-dark"
   );
   card.href = `../html/membersListing.html?id=${postData.name}`;
 
@@ -38,7 +39,7 @@ export function membersTemplate(postData) {
     "d-flex",
     "justify-content-evenly",
     "align-items-center",
-    "mt-4",
+    "mt-4"
   );
 
   const credits = document.createElement("div");
