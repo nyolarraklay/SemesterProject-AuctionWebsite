@@ -4,7 +4,6 @@ import {
   renderSortedPostsTemplateNewtoOld,
   renderSortedPostsTemplateOldtoNew,
 } from "./sortedPosts.js";
-import { header } from "../userInterface/header.js";
 
 export function renderView() {
   renderPostsTemplate();

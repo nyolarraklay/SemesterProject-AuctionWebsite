@@ -37,7 +37,7 @@ describe("storage", () => {
 });
 
 describe("logOut", () => {
-  it("Logout function clears the token from browser storage ", async () => {
+  it("Logout function clears the token from browser storage", async () => {
     const token = logout();
     expect(token).toEqual(undefined);
   });

@@ -44,7 +44,7 @@ export function profileListingsTemplate(postData) {
   bid_editContainer.classList.add(
     "d-flex",
     "justify-content-between",
-    "align-center"
+    "align-center",
   );
 
   const bids = document.createElement("h7");

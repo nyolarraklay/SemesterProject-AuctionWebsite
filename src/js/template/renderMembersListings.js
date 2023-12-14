@@ -1,4 +1,3 @@
-import { load } from "../storage/index.js";
 import { getMembersPost } from "../posts/getMembersPost.js";
 import { profileListingsTemplate } from "./profileListingsTemplate.js";
 

@@ -7,7 +7,7 @@ export function bidTemplate(postData) {
     "card-body",
     "d-flex",
     "flex-column",
-    "justify-content-between"
+    "justify-content-between",
   );
 
   const post = document.createElement("h5");

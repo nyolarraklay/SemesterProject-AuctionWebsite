@@ -40,7 +40,7 @@ describe("getPosts", () => {
       JSON.stringify({ error: "Internal Server Error" }),
       {
         status: 500,
-      }
+      },
     );
 
     try {

@@ -10,7 +10,6 @@ export async function renderPostsTemplate() {
     const container = document.querySelector(".API-title");
     container.append(...publishContent);
     searchPostsSetUp(publish);
-    setTimeout(mustLogIn, 100);
   } catch (error) {
     error;
   }

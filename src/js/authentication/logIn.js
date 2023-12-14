@@ -6,7 +6,7 @@ import { isLoggedIn } from "./status.js";
 export async function login(
   email,
   password,
-  redirectCallback = defaultRedirectCallback
+  redirectCallback = defaultRedirectCallback,
 ) {
   const response = await fetch(`${API_BASE_URL}${logInAction}`, {
     method: "post",

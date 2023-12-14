@@ -17,7 +17,7 @@ export async function getPost(id) {
     `${API_BASE_URL}/auction/listings/${id}?_seller=true&_bids=true`,
     {
       headers: headers(),
-    }
+    },
   );
   if (response.ok) {
     return await response.json();
