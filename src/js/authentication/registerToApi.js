@@ -18,9 +18,10 @@ export async function registerToAPI(name, email, password, avatar) {
 
   if (response.ok) {
     isLoggedIn();
-    location.href = "../../../index.html";
+    location.href = "../../index.html";
     return await response.json();
   }
-
+  const responseBody = await response.text();
+  alert(`Error: ${response.statusText}\n${responseBody}`);
   throw new Error(response.statusText);
 }
