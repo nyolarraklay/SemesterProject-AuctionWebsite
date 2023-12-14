@@ -1,8 +1,10 @@
 import { updateCountdown } from "../tools/clear.js";
 
 export function profileListingsTemplate(postData) {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("col-md-4", "cardBG");
   const timeLinePosts = document.createElement("a");
-  timeLinePosts.classList.add("card", "mb-3", "col", "cardBG");
+  timeLinePosts.classList.add("card");
   timeLinePosts.href = `../html/details.html?id=${postData.id}`;
 
   const cardBody = document.createElement("div");
@@ -58,6 +60,7 @@ export function profileListingsTemplate(postData) {
     img.alt = `Image from ${postData.title}`;
     cardBody.append(img, postContent, dateContent, bids);
     timeLinePosts.append(cardBody);
-    return timeLinePosts;
+    cardContainer.append(timeLinePosts);
+    return cardContainer;
   }
 }
