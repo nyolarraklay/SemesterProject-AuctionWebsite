@@ -1,12 +1,12 @@
+![Auction-website Site Banner](src/images/auction-website.png)
+
 # SemesterProject-AuctionWebsite
 Auction website from Noroff API
 
-To take the skills learned over the past three semesters and create an auction website.
+## Overview:
+Welcome to A & Z Auction! Our platform enables users to browse a wide variety of items and place bids. To participate in the bidding process, users must first register and log in. Items are organized into categories based on their use, making it easy to find what you're looking for. On our homepage, you'll find featured items sorted by highest bids and ongoing auctions. Join us today and discover exciting opportunities to bid on unique items!
+When a new user joins the website, they are given 1000 credits to use on the site. They can earn more credits by selling items and use credits to purchase items. Non-registered users can search through the listings, but only registered users can place bids on listin
 
-### Brief
-An auction site is looking to launch a website where users can add items to be bid on and bid on items other users have put up for auction.
-
-When a new user joins the website, they are given 1000 credits to use on the site. They can get credits by selling items and use credit by buying items. Non-registered users can search through the listings, but only registered users can make bids on listings.
 
 ### Badges
 [![Automated Unit Testing](https://github.com/nyolarraklay/SemesterProject-AuctionWebsite/actions/workflows/unit-test.yml/badge.svg)](https://github.com/nyolarraklay/SemesterProject-AuctionWebsite/actions/workflows/unit-test.yml)
@@ -82,7 +82,7 @@ Project Link: https://github.com/nyolarraklay/SemesterProject-AuctionWebsite
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-My classmates at FED 2022 FT and Noroff Teachers 
+I would like to thank my classmates at FED 2022 FT and the Noroff teachers for their support and guidance.
 
 
 
